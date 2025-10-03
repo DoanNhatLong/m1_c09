@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo danh sách</title>
+    <link rel="stylesheet" href="./danh_sach_files/main.css">
+</head>
+<body>
+    <ul>
+        <li>Việt Nam</li>
+            <ol>
+            <li>&nbsp;&nbsp;Hà Nội</li>
+            <li>&nbsp;&nbsp;Sài Gòn</li>
+            <li>&nbsp;&nbsp;Huế</li>
+            <li>&nbsp;&nbsp;Đà Nẵng</li>
+            </ol>
+        <li>Hoa Kì</li>
+        <ol>
+            <li>&nbsp;&nbsp;New york</li>
+            <li>&nbsp;&nbsp;Los Angeles</li>
+            <li>&nbsp;&nbsp;Chicago</li>
+            <li>&nbsp;&nbsp;Houston</li>
+        </ol>
+        <li>Trung quốc</li>
+        <ol>
+            <li>&nbsp;&nbsp;Beijing</li>
+            <li>&nbsp;&nbsp;Chong Kin</li>
+            <li>&nbsp;&nbsp;Shanghai</li>
+            <li>&nbsp;&nbsp;Tianjin</li>
+        </ol>
+    </ul>
+    <!-- <ul style="list-style-type:none">
+        <li> 
+            <h3><b>CV Nguyễn Văn A</b></h3>
+            <img width="120px" style=" padding-left: 80px;" src="/hinh-anh-avatar-trang-cuc-chat-08-05-2025.jpg" alt="">
+        </li>
+        <li>
+            Họ và tên: Nguyễn Văn A
+        </li>
+        <li>
+            Quê quán: Hà Nội
+        </li>
+        <li>
+            Trình độ học vấn: Đại học
+        </li>
+        <li>
+            Video giới thiệu: 
+            <video width="220px" controls src="/Video ngắn cảnh đẹp Đà Lạt.!❤️.mp4 " type="video/mp4"> 
+            </video>
+        </li>
+        <li>
+            Ghi âm ( nếu có): 
+            <audio controls>
+                <source src="/videoplayback (1).mp3" type="audio/ogg">
+                <source src="/videoplayback (1).mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio>
+        </li>
+    </ul> -->
+    <!-- <form action="" method="get" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif "> 
+        <h2>Order form</h2>
+        <div class="heading">What would you like to buy?
+            <br>
+            <select name="" id="" style="width: 200px">
+                <option value="">A</option>
+                <option value="">B</option>
+                <option value="">C</option>
+            </select>
+        </div>
+        <div class="heading">How many would you like Order
+            <br>
+            <input type="radio" name="pr" id="">1 - 10$ <br>
+            <input type="radio" name="pr" id="">2 - 15$ <br>
+            <input type="radio" name="pr" id="">3 - 20$ <br>
+    
+        </div>
+           
+        </h2>    
+    </form> -->
+   
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
