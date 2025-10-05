@@ -2,12 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BT2</title>
+    <title>bai_tap_2</title>
     <link rel="stylesheet" href="bai_tap_2.css">
 </head>
 <body>
-<main style="background-color:lightskyblue; height: 40vh;">
+<main style="background-color:lightskyblue;position: relative; height: 40vh;">
+    <form action="" method="post">
+        <div style="background-color:white; position: absolute; top: 10px; left: 20px; right: 20px; bottom: 20px">
+            <div class="heading">
+                <h2 class="heading2">SỞ THÍCH CỦA BẠN </h2>
+            </div>
+            <div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="right">
+                            Họ và tên
+                        </td>
+                        <td>
+                            <input type="text" name="Họ tên" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right">
+                            Email
+                        </td>
+                        <td>
+                            <input style="width: 100px" type="text" name="email" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="right">
+                            Sở thích
+                        </td>
+                        <td>
+                            <label class="check">
+                                <input type="checkbox" name="Sở thích" id=""> Thể thao
+                                <input type="checkbox" name="Sở thích" id=""> Âm nhạc
+                                <input type="checkbox" name="Sở thích" id=""> Đọc sách <br>
+                                <input type="checkbox" name="Sở thích" id=""> Lướt web
+                                <input type="checkbox" name="Sở thích" id="">Chơi game
+                                <input type="checkbox" name="Sở thích" id="">Điện ảnh <br>
+                                <input type="checkbox" name="Sở thích" id="">Du lịch
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Gửi thông tin" class="but">
+                            <input type="reset" value="Nhập lại" class="but">
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
+        </div>
+
+    </form>
 </main>
 <br>
 <main  style="background-color:yellow" >
@@ -17,11 +68,11 @@
         <table class="table">
             <tr>
                 <td>Họ và tên</td>
-                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="Họ tên" id=""></td>
             </tr>
             <tr>
                 <td>Ngày sinh</td>
-                <td><input style="width: 60px" type="text" name="" id=""></td>
+                <td><input style="width: 60px" type="text" name="Date" id=""></td>
             </tr>
             <tr>
                 <td>Giới tính</td>
@@ -30,13 +81,13 @@
             </tr>
             <tr>
                 <td>Địa chỉ</td>
-                <td><input style="height: 70px; width: 120px" type="text" name="" id="">
+                <td><textarea name="Địa chỉ" id="" cols="15" rows="3"></textarea>
                 </td>
             </tr>
             <tr>
                 <td>Lớp</td>
                 <td>
-                   <select name="" id="">
+                   <select name="Lớp" id="">
                        <option value="" selected disabled>--Chọn lớp-- </option>
                        <option value="10">10</option>
                        <option value="11">11</option>
@@ -47,17 +98,17 @@
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input style="width: 80px" type="text" name="" id=""></td>
+                <td><input style="width: 80px" type="text" name="Email" id=""></td>
             </tr>
             <tr>
                 <td>Điện thoại</td>
-                <td><input style="width: 80px" type="text" name="" id=""></td>
+                <td><input style="width: 80px" type="text" name="Dien thoai" id=""></td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <but style="background-color: grey" >Đăng kí</but>
-                    <but style="background-color: grey">Nhập lại</but>
+                    <input type="submit" value="Đăng kí" style="background-color: grey" >
+                    <input type="reset" value="Nhâp lại" style="background-color: grey">
                 </td>
             </tr>
         </table>

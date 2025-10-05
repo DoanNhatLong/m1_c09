@@ -1,0 +1,22 @@
+.div
+{
+    margin-top: 15px;
+}
+
+/*.div:has(input:checked) */
+/*{*/
+/*    background-color: yellow;*/
+/*}*/
+td {
+    text-align: center;
+    border: solid 2px black;
+}
+
+.table_heading {
+    background-color: grey;
+}
+th{
+    border: solid 2px black;
+    text-align: left;
+
+}

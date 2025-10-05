@@ -1,0 +1,30 @@
+.heading{
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;.
+}
+
+td, th{
+    border: 2px solid black;.
+}
+td {
+    padding: 5px;
+}
+th{
+    background-color: yellow;
+}
+.table2{
+    border-collapse: collapse;
+    border: none;
+}
+
+.table2_td{
+    border: none;
+}
+.right{
+    text-align: right;
+}
