@@ -1,0 +1,71 @@
+.chess{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+.rchess:nth-child(odd) .chess:nth-child(even) {
+    background-color: white;
+}
+
+.rchess:nth-child(even) .chess:nth-child(odd) {
+    background-color: white;
+}
+
+.number{
+    text-align: center;
+    font-weight: bold;
+}
+
+.table2_heading{
+    color:deepskyblue;
+    text-align: center;
+    font-size: 26px;
+}
+
+.table2_1, .table3{
+    width: 400px;
+    align-items: center;
+    text-align: center;
+    border: 1px solid white;
+    table-layout: fixed;
+}
+
+.table3{
+    border: 2px solid grey;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table2_tr1{
+    color:white;
+}
+
+.tr1_dr{
+    background-color: red;
+}
+
+.tr1_dn{
+    background-color:orange;
+}
+
+.tr1_db{
+    background-color: blue;
+}
+
+.td1{
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid grey;
+}
+
+.red{
+    color: red;
+}
+
+.blue{
+    color: blue
+}
+
+
+
