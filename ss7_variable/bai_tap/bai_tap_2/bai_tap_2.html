@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Tiền tệ</title>
 </head>
 <body>
-$END$
+<form action="" method="get">
+    <label for="number">Amount</label>
+    <input type="number" name="origin" id="number">
+    <br>
+    <label for="VND">From Curency</label>
+    <select id="VND">
+        <option value="">VND</option>
+    </select>
+
+    <label for="USD">To Currency</label>
+    <select id="USD">
+        <option value="">USD</option>
+    </select>
+    <button type="button" onclick="chuyenDoi()"> Convert </button>
+</form>
+<script src="bai_tap_2.js">
+</script>
 </body>
 </html>

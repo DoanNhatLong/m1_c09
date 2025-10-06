@@ -4,11 +4,11 @@
     background-color: black;
 }
 
-.rchess:nth-child(odd) .chess:nth-child(even) {
+.rchess:nth-child(odd) .chess:nth-child(odd) {
     background-color: white;
 }
 
-.rchess:nth-child(even) .chess:nth-child(odd) {
+.rchess:nth-child(even) .chess:nth-child(even) {
     background-color: white;
 }
 
