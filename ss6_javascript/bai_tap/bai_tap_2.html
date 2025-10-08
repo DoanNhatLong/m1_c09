@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_tap_2</title>
+</head>
+<body>
+<input type="number" id="diem_toan" placeholder="Diem toan">
+<br>
+<input type="number" id="diem_li" placeholder="Diem li">
+<br>
+<input type="number" id="diem_hoa" placeholder="Diem hoa">
+<button onclick="avg()">Calc</button>
+<p id="result"> Kết quả</p>
+<script>
+    function avg() {
+        let a = +document.getElementById("diem_toan").value;
+        let b = +document.getElementById("diem_li").value;
+        let c = +document.getElementById("diem_hoa").value;
+        let result= (a+b+c)/3;
+        result =Math.round(result*100)/100;
+        // console.log(result);
+        document.getElementById("result").append(" "+result)
+    }
+</script>
+</body>
+</html>

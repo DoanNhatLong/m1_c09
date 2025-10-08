@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_tap_1</title>
+</head>
+<body>
+<input type="number" id="usd" placeholder="USD">
+<button onclick="convert()">Convert</button>
+<p id="result"> Kết quả</p>
+<script>
+    function convert() {
+        let a = +document.getElementById("usd").value;
+        let b = a*23000;
+        // console.log(b +"vnd");
+        document.getElementById("result").append( " "+ b +"vnd");
+    }
+</script>
+</body>
+</html>
