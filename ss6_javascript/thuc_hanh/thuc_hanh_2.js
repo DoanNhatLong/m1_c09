@@ -63,10 +63,53 @@
 // }
 // fizzBuzz(1)
 //
-function factorial(i=1,a,total=1) {
-    i<=a
-        ?(total*=i,factorial(i+1,a,total))
-        :console.log(total)
+//  function factorial(i=1,a,total=1) {
+//     i<=a
+//          ?(total*=i,factorial(i+1,a,total))
+//          :console.log(total)
+//  }
+//  var a=prompt("Nhập a")*1
+//  factorial(1,a)
+
+
+// function tree(a=5,i=1) {
+//     i<=a
+//         ?(console.log("*".repeat(i)),tree(a,i+1))
+//         :null
+// }
+// tree(5,1)
+
+// function tree1(a=5,i=1) {
+//     i<=a
+//         ?(console.log(" ".repeat(a-i) + "*".repeat(i)),tree1(a,i+1))
+//         :null
+// }
+// tree1(5,1)
+
+
+// function table(table, r=1, c=1) {
+//     let table="<table border="1">";
+//     r<=10
+//         ?table+="<tr>"
+
+// }
+
+function createcol(row,col=1) {
+    return col>10
+        ? ""
+        : "<td>" +"1"+ "</td>" + createcol(row, col+1)
 }
-var a=prompt("Nhập a")*1
-factorial(1,a)
+
+
+function createRow(row = 1) {
+    return row > 10
+        ? ""
+        : "<tr>" + createcol(row,1)+ "</tr>" + createRow(row + 1);
+}
+function table() {
+    return "<table>"+createRow()+"</table>"
+
+}
+// console.log(table());
+document.write(table())
+
