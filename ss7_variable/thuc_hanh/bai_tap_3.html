@@ -50,6 +50,19 @@
         </tr>
     </table>
 </main>
-<script src="th.js"></script>
+<script>
+    var view=document.getElementById("view")
+    var value
+    function input(value) {
+        view.value += value
+    }
+
+    function calc() {
+        var result = eval(view.value);
+        // console.log(result);
+        view.value= result;
+    }
+
+</script>
 </body>
 </html>

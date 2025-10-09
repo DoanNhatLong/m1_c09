@@ -9,18 +9,38 @@
     <label for="number">Amount</label>
     <input type="number" name="origin" id="number">
     <br>
-    <label for="VND">From Curency</label>
-    <select id="VND">
-        <option value="">VND</option>
+    <label for="from">From Curency</label>
+    <select id="from">
+        <option value="vnd">VietNam</option>
+        <option value="usd">USD</option>
+        <option value="yen">Japan</option>
     </select>
 
-    <label for="USD">To Currency</label>
-    <select id="USD">
-        <option value="">USD</option>
+    <label for="to">To Currency</label>
+    <select id="to">
+        <option value="vnd">VietNam</option>
+        <option value="usd">USD</option>
+        <option value="yen">Japan</option>
     </select>
-    <button type="button" onclick="chuyenDoi()"> Convert </button>
+    <button type="button" onclick="convert()"> Convert </button>
+    <p id="result">Chuyển đổi</p>
 </form>
-<script src="bai_tap_2.js">
+<script>
+    const rates={
+        vnd:1,
+        usd:24000,
+        yen:172,
+    }
+    function convert() {
+        var moneyTrans = +document.getElementById("number").value;
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+        // debugger
+        var moneyConvert = moneyTrans/rates[to] * rates[from];
+        // console.log(moneyConvert)
+        document.getElementById("result").innerHTML= "Chuyển đổi: " + moneyConvert;
+    }
+
 </script>
 </body>
 </html>

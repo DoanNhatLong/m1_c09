@@ -5,13 +5,14 @@
     <title>Chuyển đổi</title>
 </head>
 <body>
-<main>
-    <input type="number" name="" id="number">
-    <button onclick="chuyenDoi()"> Nhâp</button>
-</main>
-
-<script src="bai_tap_1.js">
-
+<!--<button onclick="calc()">Nhập</button>-->
+<script>
+    function calc() {
+        var radius=+prompt("Nhập bán kính");
+        alert("Chu vi là " + (2*radius*Math.PI).toFixed(2));
+        alert("Dien tich la "+ (radius*radius*Math.PI).toFixed(2));
+    }
+    calc()
 </script>
 </body>
 </html>

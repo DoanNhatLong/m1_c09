@@ -94,22 +94,34 @@
 
 // }
 
-function createcol(row,col=1) {
-    return col>10
-        ? ""
-        : "<td>" +"1"+ "</td>" + createcol(row, col+1)
+// function createcol(row,col=1) {
+//     return col>10
+//         ? ""
+//         : "<td>" +"1"+ "</td>" + createcol(row, col+1)
+// }
+//
+//
+// function createRow(row = 1) {
+//     return row > 10
+//         ? ""
+//         : "<tr>" + createcol(row,1)+ "</tr>" + createRow(row + 1);
+// }
+// function table() {
+//     return "<table>"+createRow()+"</table>"
+//
+// }
+// // console.log(table());
+// document.write(table())
+
+
+let numberRandom = Math.floor(Math.random()*10);
+function startGame(solandoan=1) {
+    let numberGuess = +prompt("Số bạn đoán (từ 1 đến 9)");
+    solandoan<4
+        ?numberGuess==numberRandom
+            ?alert("Bạn đã đoán đúng")
+            :numberGuess>numberRandom
+                ?(alert("Số bạn đoán lớn hơn"),startGame(solandoan+1))
+                :(alert("Số bạn đoán bé hơn"), startGame(solandoan+1))
+        :alert("Bạn đã thất bại")
 }
-
-
-function createRow(row = 1) {
-    return row > 10
-        ? ""
-        : "<tr>" + createcol(row,1)+ "</tr>" + createRow(row + 1);
-}
-function table() {
-    return "<table>"+createRow()+"</table>"
-
-}
-// console.log(table());
-document.write(table())
-
