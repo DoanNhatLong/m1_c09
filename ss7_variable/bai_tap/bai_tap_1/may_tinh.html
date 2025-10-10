@@ -13,13 +13,12 @@
 <button onclick="calculation('/')">/</button>
 <script>
     function calculation(check) {
-        let number1=+document.getElementById("Number1").value,number2=+document.getElementById("Number2").value,result;
+        let number1=+document.getElementById("Number1").value,number2=+document.getElementById("Number2").value;
         switch (check){
             case '+': alert (number1+number2); break;
             case '-': alert (number1-number2); break;
             case '*': alert (number1*number2); break;
             case '/': number2===0?alert("Phép chia không hợp lệ"):alert(number1/number2); break;
-            default:
         }
     }
 </script>

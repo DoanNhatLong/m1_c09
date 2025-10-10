@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bang_cuu_chuong</title>
+</head>
+<body>
+<script>
+let i,n;
+    function bc(i=2, n=2) {
+        i<=9 ? (document.write(`${n}x${i}=${n*i}&nbsp `),bc(i+1,n))
+            : n<9 ?(document.write( "<br> </br>"), bc(2,n+1))
+                    :0
+    }
+    bc(i,n);
+
+</script>
+</body>
+</html>

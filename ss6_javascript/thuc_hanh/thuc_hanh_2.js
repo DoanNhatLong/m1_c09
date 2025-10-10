@@ -112,16 +112,16 @@
 // }
 // // console.log(table());
 // document.write(table())
-
-
-let numberRandom = Math.floor(Math.random()*10);
-function startGame(solandoan=1) {
-    let numberGuess = +prompt("Số bạn đoán (từ 1 đến 9)");
-    solandoan<4
-        ?numberGuess==numberRandom
-            ?alert("Bạn đã đoán đúng")
-            :numberGuess>numberRandom
-                ?(alert("Số bạn đoán lớn hơn"),startGame(solandoan+1))
-                :(alert("Số bạn đoán bé hơn"), startGame(solandoan+1))
-        :alert("Bạn đã thất bại")
-}
+let sum= (a,b) => a+b;
+console.log(sum)
+// let numberRandom = Math.floor(Math.random()*10);
+// function startGame(solandoan=1) {
+//     let numberGuess = +prompt("Số bạn đoán (từ 1 đến 9)");
+//     solandoan<4
+//         ?numberGuess==numberRandom
+//             ?alert("Bạn đã đoán đúng")
+//             :numberGuess>numberRandom
+//                 ?(alert("Số bạn đoán lớn hơn"),startGame(solandoan+1))
+//                 :(alert("Số bạn đoán bé hơn"), startGame(solandoan+1))
+//         :alert("Bạn đã thất bại")
+// }

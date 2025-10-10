@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch</title>
+</head>
+<body>
+<input type="number" name="" id="thang">
+<button onclick="calc()">
+    Tính số ngày
+</button>
+<script>
+    function calc() {
+        var thang=+document.getElementById("thang").value;
+        // console.log(thang);
+        switch(thang){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: alert( ` Tháng ${thang} có 31 ngày `);
+                break;
+            case 2: alert( ` Tháng ${thang} có 29 ngày `);
+                break;
+            case 4:
+            case 6:
+            case 8:
+            case 10:alert( ` Tháng ${thang} có 30 ngày `)
+                break;
+            default: alert(" Tháng này không hợp lệ")
+        }
+    }
+</script>
+</body>
+</html>

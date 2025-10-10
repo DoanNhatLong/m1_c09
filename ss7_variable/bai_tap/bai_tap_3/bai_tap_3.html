@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>May tinh</title>
+    <style>
+        button{
+            width: 30px;
+        }
+    </style>
+
 </head>
 <body>
 <main>
+
     <input type="text" id="view">
-    <table>
+
+    <table style="table-layout: fixed ">
         <tr class="number">
             <td><button type="button" onclick="input('1')">1
             </button>
@@ -44,7 +52,7 @@
             </td>
             <td><button type="button" onclick="input(0)">0</button>
             </td>
-            <td><button type="button" onclick="calc()">=</button>
+            <td><button type="button" onclick="calculation()">=</button>
             </td>
             <td><button type="button" onclick="input('/')">/</button>
             </td>
@@ -52,18 +60,14 @@
     </table>
 </main>
 <script>
-    var view=document.getElementById("view")
-    var value
+    let view=document.getElementById("view");
     function input(value) {
         view.value += value
     }
-
-    function calc() {
-        var result = eval(view.value);
+    function calculation() {
+        let result = eval(view.value);
         view.value = result;
-        // console.log(result);
     }
-
     function reset() {
         view.value = "";
     }
