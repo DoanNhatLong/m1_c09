@@ -8,20 +8,18 @@
 <script>
     function test(a) {
         let prime=true;
-        for (var i=2; i<=a/2;i++){
-            if (a%i==0){
+        for (let i=2; i<=a/2;i++){
+            if (a%i===0){
                 prime= false ;
                 break;
             }
         }
-        if (prime){console.log(a)};
+        if (prime){console.log(a)}
         return prime;
     }
 
  function prime(i=1,a=2) {
-     i<=20?test(a)? prime(i+1,a+1)
-                    :prime(i, a+1)
-         :0;
+     i<=20?test(a)?prime(i+1,a+1):prime(i,a+1):0;
  }
 
  prime()

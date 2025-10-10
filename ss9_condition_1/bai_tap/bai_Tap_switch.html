@@ -11,23 +11,17 @@
 </button>
 <script>
     function calc() {
-        var thang=+document.getElementById("thang").value;
+        let thang=+document.getElementById("thang").value;
         // console.log(thang);
         switch(thang){
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12: alert( ` Tháng ${thang} có 31 ngày `);
+            case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+                alert( ` Tháng ${thang} có 31 ngày `);
                 break;
-            case 2: alert( ` Tháng ${thang} có 29 ngày `);
+            case 2:
+                alert( ` Tháng ${thang} có 29 ngày `);
                 break;
-            case 4:
-            case 6:
-            case 8:
-            case 10:alert( ` Tháng ${thang} có 30 ngày `)
+            case 4:case 6:case 8:case 10:
+                alert( ` Tháng ${thang} có 30 ngày `)
                 break;
             default: alert(" Tháng này không hợp lệ")
         }
