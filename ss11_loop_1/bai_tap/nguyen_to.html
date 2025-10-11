@@ -17,14 +17,13 @@
         if (prime){console.log(a)}
         return prime;
     }
-
  function prime(i=1,a=2) {
-     i<=20?test(a)?prime(i+1,a+1):prime(i,a+1):0;
+     i<=20 ?test(a)
+           ?prime(i+1,a+1)
+           :prime(i,a+1)
+           :0;
  }
-
  prime()
-
-// console.log(prime?`${a} là số nguyên tố`:`${a} không phải là số nguyên tố`)
 </script>
 </body>
 </html>
