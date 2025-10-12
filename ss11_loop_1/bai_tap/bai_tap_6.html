@@ -6,25 +6,24 @@
 </head>
 <body>
 <script>
-    function total(i=0,a=1,b=0) {
-        i<30
-            ?a%7===0
-            ?total(i+1,a+1,b+a)
-            :total(i,a+1,b)
-            :alert(` Tổng 30 số đầu tiên chia hết cho 7 là ${b}`);
+    let total = 0;
+    let count = 0;
+    for (let a = 1; count < 30; a++) {
+        if (a % 7 === 0) {
+            total += a;
+            count++;
+        }
     }
-    total();
+    alert(total);
 
-
-    // let b = 0;
-    // let count = 0;
-    // for (let a = 1; count < 30; a++) {
-    //     if (a % 7 === 0) {
-    //         b += a;
-    //         count++;
-    //     }
+    // function total(i=0,a=1,b=0) {
+    //     i<30
+    //         ?a%7===0
+    //             ?total(i+1,a+1,b+a)
+    //             :total(i,a+1,b)
+    //         :alert(` Tổng 30 số đầu tiên chia hết cho 7 là ${b}`);
     // }
-    // alert(b);
+    // total();
 
 </script>
 </body>

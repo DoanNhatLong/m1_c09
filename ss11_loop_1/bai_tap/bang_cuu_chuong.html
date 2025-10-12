@@ -6,14 +6,21 @@
 </head>
 <body>
 <script>
-let i,n;
-    function bc(i=2, n=2) {
-        i<=9 ? (document.write(`${n}x${i}=${n*i}&nbsp `),bc(i+1,n))
-            : n<9 ?(document.write( "<br> </br>"), bc(2,n+1))
-                    :0
-    }
-    bc(i,n);
 
+document.write(`<table border="1">`)
+for (let i = 2; i <=9 ; i++) {
+    for (let j = 2; j <= 9; j++) {
+        if(j ===2){
+            document.write(`<tr>`);
+        }
+        document.write(` <td>${i}x${j} =${i*j}</td>`);
+        if(j ===9){
+            document.write(`</tr>`);
+        }
+
+    }
+}
+document.write(`</table>`)
 </script>
 </body>
 </html>
