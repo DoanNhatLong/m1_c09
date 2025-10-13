@@ -9,7 +9,7 @@
     let side1 = +prompt("Nhập cạnh a");
     let side2 = +prompt("Nhập cạnh b");
     let area = side1 * side2;
-    alert(`Area= ${area}`);
+    (side1 <= 0 && side2 <= 0) ? alert(" Giá trị không hợp lí: ") : alert(`Area= ${area}`);
 </script>
 </body>
 </html>
