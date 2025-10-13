@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_tap_7</title>
+</head>
+<body>
+<script>
+    let array=[5,8,11,-2,6,45,-7,22,6,9];
+    let numberTest=+prompt(" Nhập số bạn muốn kiểm tra:")
+    let newArray=array.filter(number=>number!==numberTest);
+    let fill=Array(array.length - newArray.length).fill(0);
+    let finalArray=[...newArray,...fill];
+    console.log(finalArray);
+</script>
+</body>
+</html>

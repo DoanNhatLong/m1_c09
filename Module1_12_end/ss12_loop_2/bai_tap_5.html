@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_tap_5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let money=+prompt("Nhập số tiền:"), time=+prompt("Nhập hạn vay (tháng):"),rate=+prompt("Nhập lãi suất:");
+    for (let i = 1; i <=time ; i++) {
+            money+=money*rate/100;
+    }
+    document.write(`Số tiền phải trả là ${money}`);
+</script>
+</html>

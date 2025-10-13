@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let huong=prompt("Hướng muốn tạo ( left,right)");
+    let goc=prompt("Hướng muốn tạo ( up,down)");
+    let dai=+prompt("Nhập độ lớn của tam giác")
+    if (huong==="left")
+    {
+        if (goc==="up")
+        {
+            document.write("<pre>");
+            for (let i = dai; i >=1; i--)
+            {
+                let daucach = dai - i;
+                document.write("*".repeat(i))
+                document.write(" ".repeat(daucach))
+                document.write("<br>");
+            }
+            document.write("</pre>");
+        }
+        else {
+            document.write("<pre>");
+            for (let i = 1; i <= dai; i++) {
+                let daucach = dai - i;
+                document.write("*".repeat(i))
+                document.write(" ".repeat(daucach))
+                document.write("<br>");
+            }
+            document.write("</pre>")
+        }
+    }
+
+    else if (goc==="up")
+        {document.write("<pre>");
+            for (let i = dai; i >=1; i--)
+            {
+                let daucach=  dai-i;
+                document.write(" ".repeat(daucach))
+                document.write("*".repeat(i))
+                document.write("<br>");
+            }
+            document.write("</pre>");
+
+        }
+    else {document.write("<pre>");
+        let dai = +prompt("Nhập độ dài muốn tạo:")
+        for (let i = 1; i <= dai; i++) {
+            let daucach= dai-i;
+            document.write(" ".repeat(daucach))
+            document.write("*".repeat(i))
+            document.write("<br>");
+        }
+        document.write("</pre>");
+    }
+
+
+
+</script>
+</html>
