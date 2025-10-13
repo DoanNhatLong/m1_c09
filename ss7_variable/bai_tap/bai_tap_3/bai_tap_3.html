@@ -11,65 +11,29 @@
 
 </head>
 <body>
-<main>
-
-    <input type="text" id="view">
-
-    <table style="table-layout: fixed ">
-        <tr class="number">
-            <td><button type="button" onclick="input('1')">1
-            </button>
-            </td>
-            <td><button type="button" onclick="input('2')">2
-            </button></td>
-            <td><button type="button" onclick="input('3')">3
-            </button></td>
-            <td><button type="button" onclick="input('+')">+
-            </button></td>
-        </tr>
-        <tr class="number">
-            <td><button type="button" onclick="input(4)">4</button>
-            </td>
-            <td><button type="button" onclick="input(5)">5</button>
-            </td>
-            <td><button type="button" onclick="input(6)">6</button>
-            </td>
-            <td><button type="button" onclick="input('-')">-</button>
-            </td>
-        </tr>
-        <tr class="number">
-            <td><button type="button" onclick="input(7)">7</button>
-            </td>
-            <td><button type="button" onclick="input(8)">8</button>
-            </td>
-            <td><button type="button" onclick="input(9)">9</button>
-            </td>
-            <td><button type="button" onclick="input('*')">*</button>
-            </td>
-        </tr>
-        <tr>
-            <td><button type="button" onclick="reset()">AC</button>
-            </td>
-            <td><button type="button" onclick="input(0)">0</button>
-            </td>
-            <td><button type="button" onclick="calculation()">=</button>
-            </td>
-            <td><button type="button" onclick="input('/')">/</button>
-            </td>
-        </tr>
-    </table>
-</main>
+<input type="number" name="" id="Number1" placeholder="Nhập số 1">
+<input type="number" name="" id="Number2" placeholder="Nhập số 2">
+<button onclick="calculation('+')">+</button>
+<button onclick="calculation('-')">-</button>
+<button onclick="calculation('*')">*</button>
+<button onclick="calculation('/')">/</button>
 <script>
-    let view=document.getElementById("view");
-    function input(value) {
-        view.value += value
-    }
-    function calculation() {
-        let result = eval(view.value);
-        view.value = result;
-    }
-    function reset() {
-        view.value = "";
+    function calculation(check) {
+        let number1=+document.getElementById("Number1").value,number2=+document.getElementById("Number2").value;
+        switch (check){
+            case '+': {
+                alert (number1+number2);
+            } break;
+            case '-': {
+                alert (number1-number2);
+            } break;
+            case '*': {
+                alert (number1*number2);
+            } break;
+            case '/': {
+                number2===0?alert("Phép chia không hợp lệ"):alert(number1/number2);
+            } break;
+        }
     }
 </script>
 </body>
