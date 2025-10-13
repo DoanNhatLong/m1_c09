@@ -7,12 +7,15 @@
 <body>
 <script>
 let electricUsed=+prompt(" Nhập số điện dùng trong tháng này(kW): ");
-if (electricUsed <= 80)
+if (electricUsed <= 80) {
     alert(` Tiền điện của bạn là ${electricUsed*5000} vnđ `);
-else if (electricUsed<=120)
+}
+else if (electricUsed<=120) {
     alert(` Tiền điện của bạn là ${electricUsed*7000+80*5000} vnđ `);
-else
+}
+else {
     alert(` Tiền điện của bạn là ${electricUsed*10000+40*7000+80*5000} vnđ `)
+}
 </script>
 </body>
 </html>
