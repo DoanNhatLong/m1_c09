@@ -11,12 +11,11 @@
         for (let j = 2; j <= 9; j++) {
             if (j === 2) {
                 document.write(`<tr>`);
-            }
-            document.write(` <td>${i}x${j}=${i * j}</td>`);
-            if (j === 9) {
+            } else if (j === 9) {
                 document.write(`</tr>`);
+            }else {
+                document.write(` <td>${i}x${j}=${i * j}</td>`);
             }
-
         }
     }
     document.write(`</table>`);
