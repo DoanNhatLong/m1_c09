@@ -10,8 +10,7 @@
     do {
         if (temperature < -273) {
             alert("Nhiệt độ nhập không thích hợp");
-        }
-        if (temperature > 100) {
+        } else if (temperature > 100) {
             alert("Hãy giảm nhiệt độ phòng");
             temperature = +prompt("Hãy nhập nhiệt độ phòng thay đổi (F)");
         } else if (temperature < 20) {
