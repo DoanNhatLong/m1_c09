@@ -7,21 +7,27 @@
 <body>
 <button onclick="start()">Chơi</button>
 <script>
-    function compare(a,b) {
-        for (let i=1; i <=3 ; i++) {
-            let a=+prompt(`Nhập số bạn đoán (lần ${i})`);
-            if (i===3) {alert("Bạn đã thua");break}
-            else if (a===b) {alert("Bạn đã đoán đúng");break}
-            else if (a>=b) alert("Số bạn đoán lớn hơn");
-            else alert("Số bạn đoán bé hơn");
+    function compare(a, b) {
+        for (let i = 1; i <= 3; i++) {
+            let a = +prompt(`Nhập số bạn đoán (lần ${i})`);
+            if (a === b) {
+                alert("Bạn đã đoán đúng");
+                break;
+            } else if (i === 3) {
+                alert("Bạn đã thua");
+            } else if (a >= b) {
+                alert("Số bạn đoán lớn hơn");
+            } else {
+                alert("Số bạn đoán bé hơn");
+            }
         }
-
     }
+
     function start() {
-        let distance=+prompt("Nhập khoảng bạn muốn đoán (từ 0-...)");
-        let random= Math.random()*(distance+1)|0;
-        let numberGuess
-        compare(numberGuess,random)
+        let distance = +prompt("Nhập khoảng bạn muốn đoán (từ 0-...)");
+        let random = Math.random() * (distance + 1) | 0;
+        let numberGuess;
+        compare(numberGuess, random);
     }
 
 </script>

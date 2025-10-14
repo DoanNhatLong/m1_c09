@@ -6,21 +6,20 @@
 </head>
 <body>
 <script>
+    document.write(`<table border="1">`)
+    for (let i = 2; i <= 9; i++) {
+        for (let j = 2; j <= 9; j++) {
+            if (j === 2) {
+                document.write(`<tr>`);
+            }
+            document.write(` <td>${i}x${j}=${i * j}</td>`);
+            if (j === 9) {
+                document.write(`</tr>`);
+            }
 
-document.write(`<table border="1">`)
-for (let i = 2; i <=9 ; i++) {
-    for (let j = 2; j <= 9; j++) {
-        if(j ===2){
-            document.write(`<tr>`);
         }
-        document.write(` <td>${i}x${j} =${i*j}</td>`);
-        if(j ===9){
-            document.write(`</tr>`);
-        }
-
     }
-}
-document.write(`</table>`)
+    document.write(`</table>`);
 </script>
 </body>
 </html>
