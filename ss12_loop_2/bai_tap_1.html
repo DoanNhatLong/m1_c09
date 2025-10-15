@@ -8,12 +8,14 @@
 
 </body>
 <script>
-    let soluong=+prompt("Nhập số lượng bạn muốn in ra: "), a=1, b=1;
-    for (let i = 1; i <=soluong; i++){
-            console.log(a)
-            a=b;
-            c=a+b;
-            b=c;
+    let quantity = +prompt("Nhập số lượng bạn muốn in ra: ");
+    let a = 1;
+    let b = 1;
+    for (let i = 1; i <= quantity; i++) {
+        document.write(`${a} <br>`);
+        let c = a + b;
+        a = b;
+        b = c;
     }
 </script>
 </html>

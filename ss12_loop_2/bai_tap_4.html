@@ -8,11 +8,17 @@
 
 </body>
 <script>
-    let width=+prompt("Nhập chiều dài hình chữ nhật:"), height=+prompt("Nhập chiều cao hình chữ nhật:");
-    for (let i = 1; i <=height ; i++) {
-        i===1 || i===height
-            ?console.log("*".repeat(width))
-            :console.log("*" + " ".repeat(width-2) + "*")
+    document.write("<pre>");
+    let width = +prompt("Nhập chiều dài hình chữ nhật:");
+    let height = +prompt("Nhập chiều cao hình chữ nhật:");
+    if (width <= 0 || height <= 0) {
+        document.write("Số liệu không hợp lệ");
     }
+    for (let i = 1; i <= height; i++) {
+        i === 1 || i === height
+            ? document.write("*".repeat(width) + "<br>")
+            : document.write("*" + " ".repeat(width - 2) + "*" + "<br>");
+    }
+    document.write("</pre>");
 </script>
 </html>
