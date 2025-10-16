@@ -6,15 +6,22 @@
 </head>
 <body>
 <script>
-    let array=[5,8,11,2,13,45,-7,22,6,9];
-    max= - Infinity;
+    let array = [5, 8, 11, 2, 13, 45, -7, 22, 6, 9];
+    max = array[0];
     for (const number of array) {
-        if(number>=max) {
-            max=number;
+        if (number >= max) {
+            max = number;
         }
     }
-    let position=array.findIndex(num=>num===max);
-    console.log(max,position);
+    alert(max);
+    for (const index in array) {
+        if (array[index] === max) {
+            alert(`số ${max}  vị trí ${index}`)
+        }
+    }
+
+
+    // let position=array.findIndex(num=>num===max);
 </script>
 </body>
 </html>

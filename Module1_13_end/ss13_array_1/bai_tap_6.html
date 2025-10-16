@@ -6,14 +6,14 @@
 </head>
 <body>
 <script>
-    let array=[5,8,11,-2,13,45,-7,22,6,9];
-    let numberTest=+prompt("Nhập số bạn muốn kiểm tra");
-    let test=false;
+    let array = [5, 8, 11, -2, 13, 45, -7, 22, 6, 9];
+    let numberTest = +prompt("Nhập số bạn muốn kiểm tra");
+    let test = false;
     for (const element of array) {
-        element===numberTest?test=true:0
+        element === numberTest ? test = true : 0
     }
-    test===true ?alert(`${numberTest} là số trong chuỗi`)
-                :alert(`${numberTest} không có trong chuỗi`);
+    test === true ? alert(`${numberTest} là số trong chuỗi`)
+        : alert(`${numberTest} không có trong chuỗi`);
 </script>
 </body>
 </html>

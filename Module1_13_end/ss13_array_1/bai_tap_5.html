@@ -6,9 +6,15 @@
 </head>
 <body>
 <script>
-    let array=[5,8,11,-2,13,45,-7,22,6,9];
-    let count=array.filter(num=>num<0);
-    console.log(count.length);
+    let array = [5, 8, 11, -2, 13, 45, -7, 22, 6, 9];
+    let count = 0;
+    for (const element of array) {
+        element < 0 && count++;
+    }
+    alert(count)
+
+    // let count=array.filter(num=>num<0);
+    // console.log(count.length);
 
 </script>
 </body>

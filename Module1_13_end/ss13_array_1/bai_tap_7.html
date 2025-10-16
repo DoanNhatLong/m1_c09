@@ -6,12 +6,22 @@
 </head>
 <body>
 <script>
-    let array=[5,8,11,-2,6,45,-7,22,6,9];
-    let numberTest=+prompt(" Nhập số bạn muốn kiểm tra:")
-    let newArray=array.filter(number=>number!==numberTest);
-    let fill=Array(array.length - newArray.length).fill(0);
-    let finalArray=[...newArray,...fill];
-    console.log(finalArray);
+    let array = [5, 8, 11, -2, 6, 45, -7, 22, 6, 9];
+    let numberTest = +prompt(" Nhập số bạn muốn kiểm tra:");
+    long = array.length;
+    for (let i = 0; i < long; i++) {
+        if (array[i] === numberTest) {
+            array.splice(i, 1);
+            array.push(0);
+        }
+    }
+    console.log(array);
+
+
+    // let newArray=array.filter(number=>number!==numberTest);
+    // let fill=Array(array.length - newArray.length).fill(0);
+    // let finalArray=[...newArray,...fill];
+    // console.log(finalArray);
 </script>
 </body>
 </html>

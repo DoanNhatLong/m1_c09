@@ -6,8 +6,20 @@
 </head>
 <body>
 <script>
-    let array=[5,8,11,2,13,45,-7,22,6,9];
-    console.log((array.reduce((sum,num)=>sum+=num))/10);
+    let array = [5, 8, 11, 2, 13, 45, -7, 22, 6, 9];
+    max = array[0];
+    let total = 0;
+    for (const number of array) {
+        total += number;
+        if (number >= max) {
+            max = number;
+        }
+    }
+    alert(max);
+    alert(total / array.length);
+
+
+    // alert((array.reduce((sum,num)=>sum+=num))/10);
 </script>
 </body>
 </html>

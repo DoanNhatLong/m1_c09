@@ -6,10 +6,13 @@
 </head>
 <body>
 <script>
-    let array=[5,8,11,-2,6,45,-7,22,6,9];
-    let array2=[2,4,5]
-    let newArray=[...array,...array2];
+    let array = [5, 8, 11, 3, 6, 45, 7, 22, 6, 9];
+    let array2 = [5, 8, 11, 1, 6, 45, 6, 22, 6, 7];
+    let newArray = [...array, ...array2];
     console.log(newArray);
+
+    // let newArray=array.concat(array2);
+    // console.log(newArray);
 </script>
 </body>
 </html>
