@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exe</title>
+</head>
+<body>
+
+<script>
+    let long = +prompt("Nhập n");
+    if (long <= 0) {
+        alert("n phải là số nguyên dương");
+        long = +prompt("Nhập lại n");
+    }
+    let array = new Array(long);
+    let even = 0;
+    let odd = 0;
+    for (let i = 0; i < long; i++) {
+        let element_i = prompt(`Nhập số thứ ${i + 1}`)
+        array[i] = element_i * 1;
+    }
+    for (let i = 0; i < long; i++) {
+        if (array[i] % 2 === 0) {
+            even++;
+        }
+        if (array[i] % 2 === 1)
+            odd++;
+    }
+    even === odd ? alert("OK") : alert("NO");
+</script>
+</body>
+</html>

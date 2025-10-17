@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let notice;
+    do{notice = +prompt("..............Quản lí sinh viên.........\n" +
+        "1. Hiển thị danh sách \n" +
+        "2. Thêm môột sinh viên \n" +
+        "3. Xóa một sinh viên \n" +
+        "4. Kết thúc chuowng trình \n");
+        switch (notice) {
+            case 1:
+                alert("Hiển thị danh sách");
+                break;
+            case 2:
+                alert("Thêm một sinh viên");
+                break;
+            case 3:
+                alert("Xóa một sinh viên")
+                break;
+            case 4:
+                if (confirm("Bạn có chắc chắn không ?")) {
+                    alert("Kết thúc chương trình");
+                    window.close()
+                } else notice = 0;
+        }
+    }
+    while (notice!==4)
+    // function choose(){
+    //
+    //    let a=document.getElementById("input").value;
+    //    if (a==1) {
+    //        newtab.alert("Hiển thị danh sách");
+    //    }
+    //    else if (a==2){
+    //        newtab.alert("Thêm một sinh viên");
+    //    }
+    //    else if (a==3){
+    //        window.open().alert("Xóa một sinh viên");
+    //    }
+    //    else {
+    //        window.open().alert("Bạn có chắc chắn không ?");
+    //    }
+    //
+    // }
+
+</script>
+</body>
+</html>

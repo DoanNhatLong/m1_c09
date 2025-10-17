@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<button onclick="Menu()">
+    Menu
+</button>
+<body>
+<script>
+    let total=0;
+    let menu;
+    let ordercafe="";
+    let ordercacao="";
+    let orderorange="";
+    let numbercafe="";
+    let numbercacao="";
+    let numberorange="";
+
+    function Menu() {
+    do {
+        menu = +prompt(`---------Menu--------
+        Hãy nhập đồ uống
+        1.cafe: 10k
+        2.cacao:15k
+        3.nước cam:20k
+        4.Kết thúc
+        -------------Danh sách-------
+        ${ordercafe}  ${numbercafe}
+        ${ordercacao}  ${numbercacao}
+        ${orderorange}  ${numberorange}
+        Tổng tiên: ${total} k`)
+        switch (menu) {
+            case 1:
+                total += 10;
+                if (typeof numbercafe==='string'){numbercafe=(numbercafe)*1};
+                numbercafe+=1;
+                if (ordercafe==="") {ordercafe +="1.cafe"};
+                break;
+            case 2:
+                total += 15;
+                if (typeof numbercacao==='string'){numbercacao=(numbercacao)*1};
+                numbercacao+=1;
+                if (ordercacao==="") {ordercacao +="2.cacao"};
+                break;
+            case 3:
+                total += 20;
+                if (typeof numberorange==='string'){numberorange=(numberorange)*1};
+                numberorange+=1;
+                if (orderorange==="") {orderorange +="3.nước cam"};
+                break;
+            case 4:
+                if (confirm("Bạn có muốn tính không ?")) {
+                    alert(`Bill:
+                    ${ordercafe}   ${numbercafe}
+                    ${ordercacao}  ${numbercacao}
+                    ${orderorange} ${numberorange}
+                    Tổng tiên: ${total} k`);
+                    menu=4;
+                } else menu = 0;
+        }
+    }
+    while (menu!==4)
+    }
+
+</script>
+</body>
+</html>

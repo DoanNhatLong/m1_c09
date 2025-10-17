@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quan_ly</title>
+</head>
+
+<body>
+<main>
+    <h2> Add New Product</h2>
+    <div>
+        <input type="text" name="" id="input">
+        <button onclick="add()">Add</button>
+    </div>
+    <h2> Display All Product</h2>
+    <p>Product Name</p>
+    <span>9 Product</span>
+    <br> <br>
+    <table>
+        <tr>
+            <td>Sony Xperia</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Samsung Galaxy</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Nokia 6</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Xiaomi Redmi Note 4</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Apple iPhone 6S</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Xiaomi 5s Plus</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Apple iPhone 8 Plus</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Fujitsu F-04E</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Oppo A71</td>
+            <td>
+                <button>Edit</button>
+            </td>
+            <td>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </table>
+    <br><br><br>
+    <div id="table">
+
+    </div>
+</main>
+
+<script>
+    let array = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi', 'Appe Iphone', 'Xiaomi 5s', 'Appe iPhone 8', 'Fujitsu F-04E', 'Oppo A71'];
+
+
+    function edit(i) {
+        array[i] = prompt("Bạn muốn sửa thành gì:");
+        table()
+    }
+
+    function del(i) {
+        if ("Bạn có muốn xóa thật không ?") {
+            array.splice(i, 1);
+            table();
+        }
+    }
+
+    function table() {
+        let product = `<table>`;
+        let length = array.length;
+        for (let i = 0; i < length; i++) {
+            product += (`<tr> <td> ${array[i]}<button onclick="edit(${i})">Edit</button> </td>
+            <td> <button onclick="del(${i})">Delete</button> </td> </tr>`);
+        }
+        product += `</table>`;
+        document.getElementById("table").innerHTML = product;
+    }
+
+    function add() {
+        let addProduct = document.getElementById("input").value;
+        array.push(addProduct);
+        table();
+    }
+
+    table();
+
+
+</script>
+</body>
+</html>

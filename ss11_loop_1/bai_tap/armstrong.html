@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baitap4</title>
+</head>
+<body>
+
+</body>
+<script>
+    number=prompt("Nhập số bạn muốn kiểm tra");
+    // const cut=(str)=>str.slice(0,-1);
+    // const gain=(str)=>str.slice(-1);
+    let long=number.length;
+    let sum=0;
+    function test(num,long,stop=+number) {
+        if (stop===0) return sum===+number;
+        let over=stop%10;
+        sum+=over**long;
+        return test(num,long,Math.floor(stop/10))
+    }
+    ( test(+number,long))?alert("Đây là ố Armstrong"):alert("Đây không phải số Armstrong");
+
+
+
+
+
+
+
+
+    // let numberTest;
+    // let number = +prompt("Nhập 1 số");
+    // let number1, number2, number3;
+    // let long = number.toString().length;
+    // string=number.toString();
+    // count=0;
+    // alert(string);
+    // number1=string.charAt(0);
+    // alert(number1)
+    // number2=string.charAt(1);
+    // alert(number2)
+    // number3=string.charAt(2);
+    //
+    // function check() {
+    //
+    // }
+
+
+    // let number1=number%(10**(long-2));
+    // number2Test=number-number1;
+    // number2=(number2Test%(10**(long-1)))/10;
+    //
+    // alert(number2);
+    // if number = number1**long + number2**long + number3**long;
+
+
+    // number1= (Math.floor(number/(10**(long-1))));
+    // number2= Math.floor((number-(number1*10**(long-1)))/(10**(long-2)));
+
+</script>
+</html>

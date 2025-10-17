@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baitap3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = +prompt("Nhập số a");
+    let b = +prompt("Nhập số b");
+    let min;
+    let numberDiv = 1;
+    a > b ? min = b : min = a;
+    for (let i = 1; i < min; i++) {
+        if (a % i === 0) {
+            if (b % i === 0) {
+                numberDiv = i
+            }
+        }
+    }
+    alert(` Ước chung lớn nhất là  ${numberDiv}`);
+    alert(` Bội chung nhỏ nhất là ${a * b / numberDiv}`);
+
+
+</script>
+</html>

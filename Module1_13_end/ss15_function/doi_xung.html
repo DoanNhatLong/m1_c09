@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doi_xung</title>
+</head>
+<body>
+
+</body>
+<script>
+    let word = prompt("Nhập từ bạn muốn kiểm tra:");
+
+    function mirrorWord(a) {
+        let array = [...a];
+        let lenght = array.length;
+        let confim = true;
+        for (let i = 0; i <= lenght / 2; i++) {
+            if (array[i] !== array[lenght - 1 - i]) {
+                confim = false;
+                break;
+            }
+        }
+        return confim;
+    }
+
+    true === mirrorWord(word) ? alert("Đây là chữ hoàn hảo") : alert("Đây không phải chữ hoàn hảo");
+
+</script>
+</html>

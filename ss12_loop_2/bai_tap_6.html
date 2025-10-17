@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_tap_6</title>
+</head>
+<body>
+<pre>
+      ** **
+     *  *  *
+      *   *
+       * *
+        *
+</pre>
+<script>
+    document.write(`<pre>`);
+    let height = +prompt("Nhập chiều cao bạn muốn vẽ:");
+    for (let i = 1; i <= height + 1; i++) {
+        if (i === 1) {
+            document.write("*".repeat(height - i * 2) + " " + "*".repeat(height - i * 2) + "<br>");
+        } else if (i === 2) {
+            document.write(" ".repeat(i - 2) + "*" + " ".repeat(height - i - 1) + "*" + " ".repeat(height - i) + "*" + "<br>");
+        } else {
+            document.write(" ".repeat(i - 2) + "*" + " ".repeat(2 * height - i * 2) + "*" + "<br>");
+        }
+    }
+    document.write(`</pre>`);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+    // let a =[1,'b','n'];
+    // a.forEach(function (element){
+    //     console.log(element);
+    // })
+
+    // sum=(a,b)=>a+b;
+    // alert(sum(3,4));
+    function test(b) {
+        let flag=true;
+        for (let i = 2; i <b ; i++) {
+            if(b%i===0) flag=false;
+        }
+        flag?alert("Số NT"):alert("Không phải số NT")
+    }
+    b=+prompt("Nhâp b");
+    test (b);
+
+
+
+</script>
+</body>
+</html>

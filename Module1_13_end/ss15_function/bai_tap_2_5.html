@@ -5,8 +5,16 @@
     <title>bai_tap_2_5</title>
 </head>
 <body>
+1,2,3,4,5 <br>
+a,b,c,d,e
 <script>
+    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let zodiac = ["Ursa", "Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa", "Major", "Leo"];
+    let input = prompt("Nhập ngôi sao bạn muôn tra:");
+    let index = star.findIndex(a => a === input);
+    index === -1 ? alert("Không tìm ra ngôi sao b nhập") : alert(zodiac[index]);
+
 
 </script>
 </body>
-</html>
+</html>VegafDênb

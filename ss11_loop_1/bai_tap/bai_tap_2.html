@@ -8,7 +8,7 @@
 <script>
     let temperature = +prompt("Hãy nhập nhiệt độ phòng (F)");
     do {
-        if (temperature < -273) {
+        if (temperature <= -273) {
             alert("Nhiệt độ nhập không thích hợp");
         } else if (temperature > 100) {
             alert("Hãy giảm nhiệt độ phòng");

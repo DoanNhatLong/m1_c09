@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exe2</title>
+</head>
+<body>
+
+<script>
+    let array = [1, 2, 3, 1, 4, 9];
+    let side = array.length;
+    let flag = true;
+    if (side % 2 === 1) {
+        flag = false;
+        side = -1;
+    }
+    for (let i = 0; i < side / 2; i++) {
+        if (array[i] * array[i] !== array[(side / 2) + i]) {
+            flag = false;
+            break;
+        }
+    }
+    flag ? alert("True") : alert("False");
+
+</script>
+</body>
+</html>
