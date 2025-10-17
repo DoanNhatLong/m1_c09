@@ -6,6 +6,17 @@
 </head>
 <body>
 <script>
+    let string = prompt("Nhập chuỗi bạn muốn đảo ngược");
+    let array = string.split("");
+    console.log(array);
+    long = array.length;
+    for (let i = 0; i < long; i++) {
+        if ("a" <= array[i] && array[i] <= "z") {
+            array[i] = array[i].toUpperCase();
+        } else array[i] = array[i].toLowerCase();
+    }
+    let result = array.join("");
+    alert(result);
 
 </script>
 </body>
