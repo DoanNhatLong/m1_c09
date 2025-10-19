@@ -6,11 +6,21 @@
 </head>
 <body>
 <script>
-    let a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
-    for (const i in a) {
+    // let a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+
+    let array = new Array(5);
+    longs = array.length;
+    for (let i = 0; i < longs; i++) {
+        array[i] = [];
+        for (let j = 0; j < 4; j++) {
+            let element_i_j = +prompt(`Nhập phần tử hàng ${i} thứ ${j} vào: `);
+            array[i][j] = element_i_j;
+        }
+    }
+    for (const i in array) {
         console.log(`row ${i}`);
-        for (const j in a[i]) {
-            console.log(a[i][j])
+        for (const j in array[i]) {
+            console.log(array[i][j]);
         }
     }
 </script>

@@ -6,9 +6,29 @@
 </head>
 <body>
 <script>
-    let array=['a','8','11',-2,6,'b',-7,22,'6',9];
-    let count=array.reduce((a,b)=>a+(typeof b ==='number'),0);
-    console.log(count);
+    let string = prompt("Nhập chuỗi muốn kiểm tra:");
+    let array = string.trim().split(" ");
+    console.log(array);
+    let count = 0;
+    longs = array.length;
+    for (let i = 0; i < longs; i++) {
+        if (array[i] === "") {
+            continue;
+        }
+        let flag = true;
+        for (let j = 0; j < array[i].length; j++) {
+            if (!(("a" <= array[i][j] && array[i][j] <= "z") || ("A" <= array[i][j] && array[i][j] <= "Z"))) {
+                flag = false;
+                break;
+            }
+        }
+        flag && count++;
+    }
+    alert(count);
+
+
+    // let a = "  Klo k ... ojl  Zab  Z..  ";
+    // alert(a.match(/(?<![A-Za-z])[A-Za-z]+(?![A-Za-z.])/g));
 </script>
 </body>
 </html>

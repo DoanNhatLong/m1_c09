@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+
+<script>
+    class Mobile {
+        constructor(name, battery = +100) {
+            this.name = name;
+            this.battery = battery;
+            this.isOn = true;
+            this.texting = "";
+            this.inbox = [];
+            this.sent = [];
+        }
+
+        status() {
+            // this.shutdown();
+            this.useBattery();
+            this.isOn ? alert("Điện thaoij đang bật") : alert("Điêện thaoij đã tắt");
+
+        }
+
+        shutdown(){
+            throw new Error("Thông báo lỗi");
+        }
+
+        recharge(){
+            this.battery=100;
+        }
+
+        turnOff(){
+            this.isOn=false;
+            alert("Điện thoại đang tắt");
+        }
+
+        turnOn(){
+            this.useBattery();
+            if (this.battery>0 && this.isOn===true) {
+                this.isOn=true;
+                alert("Điêện thoa đang bât");
+            } else alert("Điện thaoij hết pin");
+
+        }
+
+        useBattery(){
+            this.battery--;
+            alert(`Dung lượng pin còn: ${this.battery}`);
+            if (this.battery===0){
+                alert("Hết pin")
+                this.turnOff()}
+        }
+
+        mess(text){
+            this.texting=text;
+            alert(this.texting)
+        }
+
+        send(target){
+            this.useBattery();
+            this.sent.push(this.texting);
+            alert("Tin nhắn đã được gửi ");
+            this.texting="";
+            target.inbox.push(this.sent[this.sent.length-1]);
+        }
+
+        checkSent(){
+            this.useBattery();
+            for (let i = 0; i < this.sent.length; i++) {
+                alert(`Tin nhắn ${i+1} là ${this.sent[i]} `);
+            }
+        }
+
+        checkInbox(){
+            this.useBattery();
+            for (let i = 0; i < this.inbox.length; i++) {
+                alert(`Tin nhắn nhận ${i+1} là ${this.inbox[i]} `);
+            }
+        }
+
+    }
+
+    const nokia=new Mobile("Nokia");
+    const iPhone=new Mobile("Iphone");
+    nokia.battery=9;
+    nokia.status();
+    nokia.turnOn();
+    nokia.mess("Where");
+    nokia.send(iPhone);
+    nokia.mess("Lân 2");
+    nokia.send(iPhone);
+    nokia.checkSent(iPhone);
+    nokia.recharge();
+    iPhone.checkInbox();
+</script>
+</body>
+</html>

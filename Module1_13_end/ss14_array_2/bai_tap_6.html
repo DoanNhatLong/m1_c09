@@ -8,19 +8,9 @@
 <script>
     let array=['a','-','11',-2,6,'b',-7,22,'-',9];
     let newArray=array.map(a=>a==='-'?'_':a);
-    console.log(newArray);
+    alert(newArray);
 
-    let i=0;
-    for (const e of array) {
-        if(e==='-'){
-            array[i]='_';
-        }
-        else{
-            array[i]=e;
-        }
-        i++
-    }
-    console.log(array);
+
 
 </script>
 </body>

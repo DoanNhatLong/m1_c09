@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apple</title>
+</head>
+<body>
+
+<script>
+    class Apple {
+        constructor() {
+            this.quantity = 10;
+        }
+
+        apple() {
+            alert(this.quantity);
+        }
+
+        decrease() {
+            this.quantity--;
+            alert(this.quantity);
+        }
+
+        isEmpty() {
+            this.quantity === 0 ? alert("Blank") : alert("Have");
+        }
+
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender ? "Male" : "Female";
+            this.weight = weight;
+        }
+
+        eat(Apple) {
+            Apple.decrease();
+            this.weight++;
+        }
+
+        check(apple) {
+            apple.apple();
+        }
+
+        getInfo(info) {
+            alert(`${info.name} + ${info.gender} + ${info.weight}`);
+        }
+    }
+
+    const adam = new Human("Adam", true, 60);
+    const eva = new Human("Eva", false, 48);
+    const apple = new Apple("apple");
+    adam.eat(apple);
+    adam.check(apple);
+
+    console.log(adam, eva);
+    adam.getInfo(eva);
+
+    // apple.decrease();
+    // apple.isEmpty();
+
+</script>
+
+</body>
+</html>

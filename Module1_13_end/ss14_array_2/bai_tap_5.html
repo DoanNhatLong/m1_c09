@@ -6,13 +6,11 @@
 </head>
 <body>
 <script>
-    let array1=[1,4,5];
-    let array2=[1,4,7];
-    let i=0;
-    for (const e of array1) {
-        e===array2[i]?i++:alert("Không trùng nhau");
-    }
-    i===3 && alert("Trùng nhau")
+    let string1 = "  kdo aoie   z ";
+    let newString1 = string1.trim().split(/\s+/).join("-");
+    let string2 = "kdo aoie z";
+    let newString2 = string2.trim().split(/\s+/).join("-");
+    newString1 === newString2 ? alert("True") : alert("False");
 </script>
 </body>
 </html>

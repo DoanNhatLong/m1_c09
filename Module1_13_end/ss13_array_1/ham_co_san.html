@@ -6,6 +6,25 @@
 </head>
 <body>
 <script>
+    // Bài 1
+    let myColor = ["Red", "Green", "White", "Black"];
+    let connect= myColor.join(',');
+    console.log(connect);
+
+    //Bài 2
+    let stringTest="025468";
+    let arrayTrans= stringTest.split("");
+    longs=arrayTrans.length;
+    for (let i = longs; i >=1; i--) {
+        if (arrayTrans[i]%2===0 && arrayTrans[i-1]%2===0){
+            arrayTrans.splice(i,0,"-");
+        }
+    }
+    console.log(arrayTrans.join(""))
+
+    // alert(arrayTrans.map((a,b)=>(a%2===0 && arrayTrans[b+1]%2===0)?a+"-":a));
+
+    // Bài 3
     let string = prompt("Nhập chuỗi bạn muốn đảo ngược");
     let array = string.split("");
     console.log(array);
