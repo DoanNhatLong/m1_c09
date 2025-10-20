@@ -7,11 +7,14 @@
 <body>
 <script>
     function checkNumber(number1, number2) {
-        number1 >= number2 ? alert(` Số ${number1} lớn hơn `) : alert(number1 + number2);
+        if (number1 >= number2) {
+            return (` Số ${number1} lớn hơn `);
+        } else {
+            return (number1 + number2)
+        }
     }
 
-    checkNumber(3, 4);
-
+    alert(checkNumber(4, 3));
 </script>
 </body>
 </html>

@@ -10,14 +10,17 @@
 
     function check(number) {
         if (isNaN(number)) {
-            alert("Nhập vào không hợp lệ ");
+            return ("Nhập vào không hợp lệ ");
         } else {
-            number % 1 === 0 && number > 0 ? alert("Là số nguyên dương")
-                : alert("Không phải số nguyên dương");
+            if (number % 1 === 0 && number > 0) {
+                return ("Là số nguyên dương");
+            } else {
+                return ("Không phải số nguyên dương");
+            }
         }
     }
 
-    check(input);
+    alert(check(input));
 
 </script>
 </body>

@@ -5,24 +5,26 @@
     <title>bai_tap_1_5</title>
 </head>
 <body>
-<input onchange="checkStar(star,zodiac)" id="input">
 <script>
 
     let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
     let zodiac = ['Ursa', "Minor", 'Taurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa', 'Major', 'Leo'];
+    let string = prompt("Nhập ngôi sao muốn tìm kiếm");
 
-    function checkStar(array1, array2) {
-        let string = document.getElementById("input").value;
-        let flag = true;
+    function checkStar(array1, array2, string) {
+        let flag = false;
         for (let i = 0; i < array1.length; i++) {
             if (string === array1[i]) {
-                flag = false;
-                alert(array2[i]);
-                break;
+                flag = true;
+                return (array2[i]);
             }
         }
-        flag && alert("Không tìm thấy ngôi sao");
+        if (flag === false) {
+            return ("Không tìm thấy ngôi sai");
+        }
     }
+
+    alert(checkStar(star, zodiac, string));
 
 </script>
 </body>

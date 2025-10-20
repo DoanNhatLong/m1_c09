@@ -10,10 +10,13 @@
 
     function check(string) {
         let convert = +string;
-        isNaN(convert) ? alert("Kí tự đó không phải lá số") : alert("Kí tự đó là số");
+        if (isNaN(convert)) {
+            return ("Kí tự đó không phải lá số")
+        } else {
+            return ("Kí tự đó là số");
+        }
     }
-
-    check(input);
+    alert(check(input));
 </script>
 </body>
 </html>

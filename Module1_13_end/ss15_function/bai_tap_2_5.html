@@ -12,15 +12,16 @@
     let numberC = +prompt("Nhập số c");
 
     function compare(number1, number2, number3) {
+        let min;
         if (number1 < number2 && number1 < number3) {
-            alert(`Số nhỏ nhất là ${number1} `);
+            min = number1;
         } else {
-            number2 < number3 ? alert(`Số nhỏ nhất là ${number2} `)
-                : alert(`Số nhỏ nhất là ${number3} `);
+            number2 < number3 ? min = number2 : min = number3
         }
+        return min;
     }
 
-    compare(numberA, numberB, numberC);
+    alert(compare(numberA, numberB, numberC));
 
 </script>
 </body>

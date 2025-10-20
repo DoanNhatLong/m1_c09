@@ -6,15 +6,14 @@
 </head>
 <body>
 <script>
+    let result = 0;
+    alert(`Trước khi gọi hàm: ${result}`);
     function addNumbers() {
         let firstNum = 4;
         let secondNum = 8;
         result = firstNum + secondNum;
         return result;
     }
-
-    result = 0;
-    alert(`Trước khi gọi hàm: ${result}`)
     result = addNumbers();
     alert(` Sau khi gọi hàm: ${result}`);
 

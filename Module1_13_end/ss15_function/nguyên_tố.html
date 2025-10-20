@@ -17,10 +17,12 @@
                 flag = false;
             }
         }
-        flag ? alert("Là số nguyên tố") : alert("Không phải số nguyên tố");
+        return flag;
     }
-    let numberCheck=+prompt("Nhập sô bạn muốn kiểm tra");
-    isPrime(numberCheck);
+
+    let numberCheck = +prompt("Nhập sô bạn muốn kiểm tra");
+    isPrime(numberCheck) ? alert("Là số nguyên tố ") : alert("Không phải soos nguyên tố");
+
 
 </script>
 </body>

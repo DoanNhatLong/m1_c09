@@ -9,16 +9,16 @@
 
 <script>
     function footToMetter(number) {
-        alert(number * 3.279);
+        return (number * 3.279);
     }
 
     function metterToFoot(number) {
-        alert(number * 0.035);
+        return (number * 0.035);
     }
 
     let number = +prompt("Nhập số bạn muốn chuyển đổi ");
-    footToMetter(number);
-    metterToFoot(number);
+    alert( footToMetter(number));
+    alert( metterToFoot(number));
 </script>
 </body>
 </html>
