@@ -6,10 +6,10 @@
 </head>
 <body>
 <script>
-    let longs = +prompt("Nhập độ dài mảng");
+    let side = +prompt("Nhập độ dài mảng");
     let array = [];
     let count = 0;
-    for (let i = 0; i < longs; i++) {
+    for (let i = 0; i < side; i++) {
         let element = prompt("Nhập ký tự muốn thêm vào ");
         if (0 <= +element && +element <= 9) {
             count++;
