@@ -8,10 +8,9 @@
 <script>
     let string = prompt("Nhập chuỗi muốn kiểm tra:");
     let array = string.trim().split(" ");
-    console.log(array);
     let count = 0;
-    longs = array.length;
-    for (let i = 0; i < longs; i++) {
+    let side = array.length;
+    for (let i = 0; i < side; i++) {
         if (array[i] === "") {
             continue;
         }
