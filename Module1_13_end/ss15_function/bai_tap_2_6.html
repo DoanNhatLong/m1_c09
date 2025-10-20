@@ -6,6 +6,18 @@
 </head>
 <body>
 <script>
+    let input = +prompt("Nhập vào một số");
+
+    function check(number) {
+        if (isNaN(number)) {
+            alert("Nhập vào không hợp lệ ");
+        } else {
+            number % 1 === 0 && number > 0 ? alert("Là số nguyên dương")
+                : alert("Không phải số nguyên dương");
+        }
+    }
+
+    check(input);
 
 </script>
 </body>

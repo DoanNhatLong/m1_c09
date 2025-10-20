@@ -5,16 +5,23 @@
     <title>bai_tap_2_5</title>
 </head>
 <body>
-1,2,3,4,5 <br>
-a,b,c,d,e
-<script>
-    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
-    let zodiac = ["Ursa", "Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa", "Major", "Leo"];
-    let input = prompt("Nhập ngôi sao bạn muôn tra:");
-    let index = star.findIndex(a => a === input);
-    index === -1 ? alert("Không tìm ra ngôi sao b nhập") : alert(zodiac[index]);
 
+<script>
+    let numberA = +prompt("Nhập số a");
+    let numberB = +prompt("Nhập số b");
+    let numberC = +prompt("Nhập số c");
+
+    function compare(number1, number2, number3) {
+        if (number1 < number2 && number1 < number3) {
+            alert(`Số nhỏ nhất là ${number1} `);
+        } else {
+            number2 < number3 ? alert(`Số nhỏ nhất là ${number2} `)
+                : alert(`Số nhỏ nhất là ${number3} `);
+        }
+    }
+
+    compare(numberA, numberB, numberC);
 
 </script>
 </body>
-</html>VegafDênb
+</html>

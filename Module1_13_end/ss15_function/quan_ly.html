@@ -13,92 +13,92 @@
         <button onclick="add()">Add</button>
     </div>
     <h2> Display All Product</h2>
-    <p>Product Name</p>
-    <span>9 Product</span>
-    <br> <br>
-    <table>
-        <tr>
-            <td>Sony Xperia</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Samsung Galaxy</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Nokia 6</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Xiaomi Redmi Note 4</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Apple iPhone 6S</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Xiaomi 5s Plus</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Apple iPhone 8 Plus</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Fujitsu F-04E</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Oppo A71</td>
-            <td>
-                <button>Edit</button>
-            </td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-    </table>
+    <!--    <p>Product Name</p>-->
+    <!--    <span>9 Product</span>-->
+    <!--    <br> <br>-->
+    <!--    <table>-->
+    <!--        <tr>-->
+    <!--            <td>Sony Xperia</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Samsung Galaxy</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Nokia 6</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Xiaomi Redmi Note 4</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Apple iPhone 6S</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Xiaomi 5s Plus</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Apple iPhone 8 Plus</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Fujitsu F-04E</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--        <tr>-->
+    <!--            <td>Oppo A71</td>-->
+    <!--            <td>-->
+    <!--                <button>Edit</button>-->
+    <!--            </td>-->
+    <!--            <td>-->
+    <!--                <button>Delete</button>-->
+    <!--            </td>-->
+    <!--        </tr>-->
+    <!--    </table>-->
     <br><br><br>
     <div id="table">
 
@@ -122,8 +122,9 @@
     }
 
     function table() {
-        let product = `<table>`;
         let length = array.length;
+        let product = `<p>Product Name</p>
+        <span>${length} Product</span> <table>`;
         for (let i = 0; i < length; i++) {
             product += (`<tr> <td> ${array[i]}<button onclick="edit(${i})">Edit</button> </td>
             <td> <button onclick="del(${i})">Delete</button> </td> </tr>`);

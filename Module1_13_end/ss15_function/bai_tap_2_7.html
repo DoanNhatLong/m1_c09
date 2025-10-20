@@ -6,6 +6,22 @@
 </head>
 <body>
 <script>
+    let numberA = +prompt("Nhập vào số a ");
+    let numberB = +prompt("Nhập vào số b ");
+
+    function swap(number1, number2) {
+        let number = number1;
+        number1 = number2;
+        number2 = number;
+        return [number1, number2];
+    }
+
+    let array = swap(numberA, numberB);
+    numberA = array[0];
+    numberB = array[1];
+    alert("Số a là " + numberA);
+    alert("Số b là " + numberB);
+
 
 </script>
 </body>

@@ -6,7 +6,14 @@
 </head>
 <body>
 <script>
+    let input = prompt("Nhập vào kí tự muốn kiểm tra");
 
+    function check(string) {
+        let convert = +string;
+        isNaN(convert) ? alert("Kí tự đó không phải lá số") : alert("Kí tự đó là số");
+    }
+
+    check(input);
 </script>
 </body>
 </html>

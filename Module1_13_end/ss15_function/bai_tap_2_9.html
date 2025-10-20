@@ -6,6 +6,19 @@
 </head>
 <body>
 <script>
+    let array = ["ff", "a", "gra", "b", " ", "8", "a", "po"];
+    let charCheck = prompt("Nập kí tự bạn muốn kiểm tra:");
+
+    function check(arr, char) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] === char && count++;
+        }
+        count === 0 ? alert("-1") : alert(count);
+    }
+
+    check(array, charCheck);
+
 
 </script>
 </body>

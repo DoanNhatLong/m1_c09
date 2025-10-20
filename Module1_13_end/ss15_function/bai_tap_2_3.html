@@ -6,6 +6,17 @@
 </head>
 <body>
 <script>
+    let input = +prompt("Nhập vào số nguyên dương:");
+
+    function factorial(number) {
+        let result = 1;
+        for (let i = 1; i <= number; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    alert(factorial(input));
 
 </script>
 </body>
