@@ -10,10 +10,7 @@
     let numberB = +prompt("Nhập vào số b ");
 
     function swap(number1, number2) {
-        let number = number1;
-        number1 = number2;
-        number2 = number;
-        return [number1, number2];
+        return [number2, number1];
     }
 
     let array = swap(numberA, numberB);
