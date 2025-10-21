@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_23</title>
+</head>
+<body>
+<p id="array"></p>
+<script>
+    let side = +prompt("Nhập độ dài n của mảng");
+    let array = [];
+    for (let i = 0; i < side; i++) {
+        while (true) {
+            let element = prompt("Nhập phần tử vào mảng:");
+            if (!(element === null || element === undefined)) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+    document.getElementById("array").innerHTML = array;
+
+    function checkArray(array) {
+        let flag = true;
+        for (const element of array) {
+            // if (typeof element!== "number")
+            if (isNaN(+element)) {
+                flag = false;
+                break;
+            }
+
+        }
+        return (flag);
+    }
+
+    a = ["5", 12, 6, 15, 15];
+    alert(checkArray(a));
+
+</script>
+</body>
+</html>

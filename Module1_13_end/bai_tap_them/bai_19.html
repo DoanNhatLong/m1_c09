@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_19</title>
+</head>
+<body>
+
+<script>
+    // function checkString(str) {
+    //     return (str.match(/[A-Z]/g).join(""));
+    // }
+    // alert(checkString("KJHioojf ..lP"))
+
+    function checkString(str) {
+        let result = [];
+        for (const element of str) {
+            if ("A" <= element && element <= "Z") {
+                result.push(element);
+            }
+        }
+        return (result.join(""));
+    }
+    alert(checkString("KioH  iKl"));
+
+</script>
+</body>
+</html>

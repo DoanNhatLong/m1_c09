@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_21</title>
+</head>
+<body>
+
+<script>
+    function changeBinary(number) {
+        let result=[];
+        while(number!==0){
+            let over=number%2;
+            result.push(over);
+            debugger
+            number=Math.floor(number/2);
+
+        }
+        return result.join("");
+    }
+
+    alert(changeBinary(14))
+</script>
+</body>
+</html>

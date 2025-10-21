@@ -8,8 +8,24 @@
 
 <script>
     function checkString(str) {
-        
+        let countUpper = 0;
+        let countLower = 0;
+        for (const element of str) {
+            if ("A" <= element && element <= "Z") {
+                countUpper++;
+            }
+            if ("a" <= element && element <= "z") {
+                countLower++;
+            }
+        }
+        if (countUpper === countLower) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
+    alert(checkString("aBBu5h"));
 </script>
 </body>
 </html>

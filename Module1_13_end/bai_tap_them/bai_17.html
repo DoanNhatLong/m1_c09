@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_17</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let array = [str[0]];
+        let count = 0;
+        for (let i = 1; i < str.length; i++) {
+            if (/[a-zA-Z]/.test(str[i]) && str[i - 1] === " ") {
+                array.push(str[i]);
+                count++;
+            }
+        }
+        if (count === 0) {
+            alert(str);
+        } else {
+            alert(array.join(""));
+        }
+    }
+
+    checkString("OliKi oP ");
+</script>
+</body>
+</html>

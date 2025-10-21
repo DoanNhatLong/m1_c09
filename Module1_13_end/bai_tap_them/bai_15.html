@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_15</title>
+</head>
+<body>
+<p id="array"></p>
+<script>
+    let side = +prompt("Nhập độ dài n của mảng");
+    let array = [];
+    for (let i = 0; i < side; i++) {
+        while (true) {
+            let element = +prompt("Nhập phần tử vào mảng ( là số):");
+            if (isNaN(element) === false) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+    // document.getElementById("array").innerHTML = array;
+
+    fibonaci = [];
+    for (let a = 1, b = 1, i = 0; i < 20; i++) {
+        fibonaci.push(a);
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    let flag = true;
+    for (const element of array) {
+        if (!fibonaci.includes(element)) {
+            flag = false;
+            break;
+        }
+    }
+    flag ? alert("OK") : alert("NO");
+</script>
+</body>
+</html>

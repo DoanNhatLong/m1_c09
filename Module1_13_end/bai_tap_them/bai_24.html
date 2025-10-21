@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_24</title>
+</head>
+<body>
+<p id="array"></p>
+<script>
+    let side = +prompt("Nhập độ dài n của mảng");
+    let array = [];
+    for (let i = 0; i < side; i++) {
+        while (true) {
+            let element = +prompt("Nhập phần tử vào mảng ( là số):");
+            if (isNaN(element) === false) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+    // document.getElementById("array").innerHTML = array;
+
+    let result= [];
+    for (const element of array) {
+        let total=0;
+        for (let i = 1; i <= element; i++) {
+            if (element%i===0){
+                total+=i;
+            }
+        }
+        result.push(total);
+    }
+    alert(result);
+
+</script>
+</body>
+</html>
