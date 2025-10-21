@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>quan_ly</title>
 </head>
+<style>
+    button {
+        background-color: greenyellow;
+        color: black;
+    }
+
+</style>
 
 <body>
 <main>
@@ -12,11 +19,19 @@
         <input type="text" name="" id="input">
         <button onclick="add()">Add</button>
     </div>
+
+
     <h2> Display All Product</h2>
+
+
+    <div>
+        <input id="find">
+        <button onclick="findProduct()"> Search</button>
+    </div>
     <!--    <p>Product Name</p>-->
     <!--    <span>9 Product</span>-->
     <!--    <br> <br>-->
-    <!--    <table>-->
+    <!--        <table style="border-collapse: collapse">-->
     <!--        <tr>-->
     <!--            <td>Sony Xperia</td>-->
     <!--            <td>-->
@@ -106,29 +121,34 @@
 </main>
 
 <script>
-    let array = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi', 'Appe Iphone', 'Xiaomi 5s', 'Appe iPhone 8', 'Fujitsu F-04E', 'Oppo A71'];
+    let array = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi', 'Appe Iphone', 'Xiaomi 5s', 'Appe iPhone 8', 'Fujitsu F-04E', 'Oppo A71', 'Zen', 'Vivo'];
 
+    table(array);
 
     function edit(i) {
         array[i] = prompt("Bạn muốn sửa thành gì:");
-        table()
+        table(array)
     }
 
     function deleteTable(i) {
         if (confirm("Bạn có muốn xóa thật không ?")) {
             array.splice(i, 1);
-            table();
+            table(array);
         }
     }
 
-    function table() {
+    function table(array) {
         let length = array.length;
-        let product = `<p>Product Name</p>
-        <span>${length} Product</span> <table >`;
+        let product =
+            `
+                       <table border="1" style="border-collapse: collapse"  >
+                        <th colspan="3"> <span>Product Name</span>
+                       <span >${length} Product</span> </th>`;
         for (let i = 0; i < length; i++) {
             product += (`<tr>
-<td>  ${array[i]}<div><button onclick="edit(${i})">Edit</button>
-             <button onclick="deleteTable(${i})">Delete</button> </div> </td>
+                  <td>  ${array[i]} </td>
+                  <td><button onclick="edit(${i})">Edit</button> </td>
+                  <td> <button onclick="deleteTable(${i})">Delete</button> </td>
              </tr>`);
         }
         product += `</table>`;
@@ -137,13 +157,36 @@
 
     function add() {
         let addProduct = document.getElementById("input").value;
-        array.push(addProduct);
-        table();
+        if (addProduct !== "") {
+            array.push(addProduct);
+            table(array);
+        }
     }
 
-    table();
+    function findProduct() {
+        let find = document.getElementById("find").value;
+        let arrayFind = array.filter(a => a.includes(find));
+        table(arrayFind);
+    }
 
+    function pageProduct(a) {
+        let arrayPage = [];
+        let [...newArray] = array;
+        for (let i = 5 * a, j = 0; i < 5 + 5 * a; i++) {
+            if (newArray[i] !== undefined) {
+                arrayPage[j] = newArray[i];
+                j++;
+            }
+        }
+        table(arrayPage);
+    }
 
 </script>
+
+<div>
+    <button onclick="pageProduct(0)"> 1</button>
+    <button onclick="pageProduct(1)"> 2</button>
+    <button onclick="pageProduct(2)"> 3</button>
+</div>
 </body>
 </html>
