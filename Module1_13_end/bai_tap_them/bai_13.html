@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_13</title>
+</head>
+<body>
+<p id="array"></p>
+<p id="result"></p>
+<script>
+    let side = +prompt("Nhập độ dài n của mảng");
+    let array = [];
+    for (let i = 0; i < side; i++) {
+        while (true) {
+            let element = +prompt("Nhập phần tử vào mảng ( là số):");
+            if (isNaN(element) === false) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+
+    // document.getElementById("array").innerHTML = array;
+
+    function isPrime(number) {
+        let flag = true;
+        if (number < 2) {
+            flag = false;
+        } else {
+            for (let i = 2; i < number / 2; i++) {
+                if (number % i === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return (flag);
+    }
+
+    let check = true;
+    for (let i = 0; i < side; i++) {
+        if (!isPrime(array[i])) {
+            check = false;
+            break;
+        }
+    }
+    check ? alert("Mảng đều là số nguyên tố") : alert("Mảng có số không phải SNT");
+
+</script>
+</body>
+</html>

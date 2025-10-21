@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 7</title>
+</head>
+<body>
+<p id="array"></p>
+<p id="newarray"></p>
+
+<script>
+    let side = +prompt("Nhập độ dài n của mảng");
+    let array = [];
+    for (let i = 0; i < side; i++) {
+        while (true) {
+            let element = +prompt("Nhập phần tử vào mảng ( là số nguyên  10-100):");
+            if (element >= 10 && element <= 100) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+    document.getElementById("array").innerHTML = " mảng bạn nhập vào là :" + array;
+    let newArray = [];
+    for (let i = 0; i < side; i++) {
+        if (Math.floor(array[i] / 10) < array[i] % 10) {
+            newArray.push(array[i]);
+        }
+    }
+    document.getElementById("newarray").innerHTML = "mảng qua kiểm tra là:" + newArray;
+</script>
+
+</body>
+</html>

@@ -6,5 +6,49 @@
 </head>
 <body>
 
+<script>
+    class ElectricLamp {
+        constructor(status=true) {
+            this.status=status;
+        }
+        turnOff(){
+            this.status=false;
+        }
+        turnOn(){
+            this.status=true;
+        }
+        showStatus(){
+            this.status?alert("Đang bật"):"Đang tắt";
+        }
+    }
+
+    class SwitchButton{
+        constructor(lamp) {
+            this.status=status;
+            this.lamp=lamp;
+        }
+
+        showlamp(){
+            this.lamp.showStatus();
+        }
+
+        switchOn(){
+        this.lamp.turnOn();
+        }
+
+        switchOff(){
+        this.lamp.turnOff();
+        }
+
+    }
+    const lamp1= new ElectricLamp(true);
+    const switch1=new SwitchButton(lamp1);
+    lamp1.showStatus();
+    lamp1.turnOff();
+    console.log(switch1.lamp.status);
+    switch1.showlamp();
+    console.log(switch1);
+    switch1.switchOn();
+</script>
 </body>
 </html>

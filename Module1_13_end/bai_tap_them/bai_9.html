@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_9</title>
+</head>
+<body>
+
+<p id="array"></p>
+<p id="result"></p>
+<script>
+    let side = +prompt("Nhập độ dài n của mảng");
+    let array = [];
+    for (let i = 0; i < side; i++) {
+        while (true) {
+            let element = +prompt("Nhập phần tử vào mảng ( là số):");
+            if (isNaN(element) === false) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+    document.getElementById("array").innerHTML = array;
+    const average = array.reduce((element1, element2) => element1 + element2) / array.length;
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        array[i] === average && count++;
+    }
+    document.getElementById("result").innerHTML = count;
+
+
+</script>
+</body>
+</html>
