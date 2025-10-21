@@ -114,8 +114,8 @@
         table()
     }
 
-    function del(i) {
-        if ("Bạn có muốn xóa thật không ?") {
+    function deleteTable(i) {
+        if (confirm("Bạn có muốn xóa thật không ?")) {
             array.splice(i, 1);
             table();
         }
@@ -124,10 +124,12 @@
     function table() {
         let length = array.length;
         let product = `<p>Product Name</p>
-        <span>${length} Product</span> <table>`;
+        <span>${length} Product</span> <table >`;
         for (let i = 0; i < length; i++) {
-            product += (`<tr> <td> ${array[i]}<button onclick="edit(${i})">Edit</button> </td>
-            <td> <button onclick="del(${i})">Delete</button> </td> </tr>`);
+            product += (`<tr>
+<td>  ${array[i]}<div><button onclick="edit(${i})">Edit</button>
+             <button onclick="deleteTable(${i})">Delete</button> </div> </td>
+             </tr>`);
         }
         product += `</table>`;
         document.getElementById("table").innerHTML = product;
