@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function checkString(str) {
+        let result = [];
+        let newString = str.toLowerCase();
+        let check = ["a", "e", "o", "i", "u"];
+        let index;
+        for (let i = 0; i < str.length; i++) {
+            if (check.includes(newString[i])) {
+                result.push(newString[i]);
+                index = check.indexOf(newString[i]);
+                check.splice(index, 1);
+            }
+        }
+        return result;
+    }
+
+    let string = prompt("Nhập từ vào:");
+    console.log(checkString(string));
+
+</script>
+
+</body>
+</html>

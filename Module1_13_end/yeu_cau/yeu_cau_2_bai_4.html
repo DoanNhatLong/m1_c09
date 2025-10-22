@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let string = prompt("Nhập vào chuỗi baạn muốn kiểm tra");
+
+    function find(x) {
+        let index = x.indexOf("/");
+        let min;
+        if (index === -1) {
+            return ("Không phải là phân số ");
+        }
+        let array = x.split("");
+        let left = array.slice(0, index).join("");
+        let right = array.slice(index + 1).join("");
+        if (isNaN(+left) || isNaN(+right)) {
+            return ("Không phải là1 phân số ");
+        } else if (+right === 0) {
+            return ("Không phải là phân số ");
+        } else if (+left === 0) {
+            return ("0");
+        } else {
+            let divisor = 1;
+            (+left > +right) ? min = +right : min = +left;
+            for (let i = 1; i <= min; i++) {
+                if (+left % i === 0) {
+                    if (+right % i === 0) {
+                        divisor = i;
+                    }
+                }
+            }
+            if (divisor === 1) {
+                return array.join("");
+            } else {
+                return (`${+left / divisor} / ${+right / divisor}`);
+            }
+        }
+    }
+
+    alert(find(string));
+</script>
+
+</body>
+</html>

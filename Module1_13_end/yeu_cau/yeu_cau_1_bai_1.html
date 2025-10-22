@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="array"></p>
+
+<script>
+    let side = +prompt("Nhập độ dài n của mảng (n<=20)");
+    while (side === 0 || side > 20) {
+        side = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
+    }
+    let array = [];
+    for (let i = 0; i < side; i++) {
+        while (true) {
+            let element = +prompt("Nhập phần tử vào mảng ( là số):");
+            if (isNaN(element) === false) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+    document.getElementById("array").innerHTML = array;
+    let flag = true;
+    for (let i = 0; i < side; i++) {
+        if (array[i] >= array[i + 1]) {
+            flag = false;
+        }
+    }
+    flag ? alert("OK") : alert("NO");
+
+</script>
+
+</body>
+</html>

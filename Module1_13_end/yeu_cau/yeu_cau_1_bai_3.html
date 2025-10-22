@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let number = prompt("Nhập vào 1 số");
+
+    function checkMaxNumber(n) {
+        if (isNaN(+n)) {
+            return ("Nhập không hợp lệ ");
+        } else if (n.length !== 4) {
+            return ("Cần nhập số có 4 chữ số");
+        } else {
+            let array = n.split("");
+            for (let i = 0; i < 3; i++) {
+                if (array.length === 3) {
+                    return (array.join());
+                } else if (array[i] < array[i + 1]) {
+                    array.splice(i, 1);
+                    return (array.join(""));
+                } else {
+                    array.pop();
+                    return (array.join(""));
+                }
+
+            }
+        }
+    }
+
+    alert(checkMaxNumber(number));
+</script>
+
+</body>
+</html>
