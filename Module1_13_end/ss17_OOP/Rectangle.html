@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="canvas" style="width: 500px; height: 500px; background-color: black"></canvas>
+
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        circuit() {
+            return (this.height + this.width) * 2;
+        }
+
+        area() {
+            return (this.height * this.width);
+        }
+
+        draw() {
+            let canvas = document.getElementById('canvas');
+            let context = canvas.getContext("2d");
+            context.fillStyle = "red";
+            context.fillRect(0, 0, this.width, this.height);
+        }
+    }
+
+    const rectangle = new Rectangle(200, 100);
+    alert(rectangle.area());
+    rectangle.draw();
+
+</script>
+</body>
+</html>
