@@ -7,9 +7,28 @@
 <body>
 
 <script>
-    function checkDate(dateString) {
-        
+
+    <!--    Kiểm tra xem chuối nhập vào dateString có phải là định dạng của ngày tháng năm hay không ( dd/mm/yyyy)-->
+
+    function checkDate(str) {
+        let array = str.split("/");
+        for (const element of array) {
+            if (+element <= 0 || !Number.isInteger(+element)) {
+                return false
+            }
+        }
+        const date = new Date(+array[2], +array[1]-1, +array[0]);
+        return (
+            date.getFullYear() === +array[2] &&
+            date.getMonth() === +array[1] - 1 &&
+            date.getDate() === +array[0]
+        )
     }
+
+
+    let string = "12/4/1998";
+    alert(checkDate(string));
+
 </script>
 </body>
 </html>
