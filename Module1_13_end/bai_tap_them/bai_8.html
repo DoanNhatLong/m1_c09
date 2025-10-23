@@ -9,9 +9,11 @@
 <p id="count"></p>
 
 <script>
-    let side = +prompt("Nhập độ dài n của mảng");
+
+<!--    Đếm số lượng số lớp nhất trong mảng. Ví dụ [1,3,6,3,6,6,6] => số lượng số lớn nhất trong mảng là 4 ( vì 6 là số lớn nhất và xuất hiện 4 lần)-->
+    let size = +prompt("Nhập độ dài n của mảng");
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {

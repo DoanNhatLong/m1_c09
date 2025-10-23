@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function processOrder(orderStatus, paymentMethod, isPaid) {
+        switch (orderStatus) {
+            case 'pending':
+                if (paymentMethod === 'credit_card' || paymentMethod === 'paypal') {
+                    alert("Đơn hàng đã đưuọc xác nhận");
+                } else if (paymentMethod === 'crypto') {
+                    alert('Cần xác nhận lại');
+                } else {
+                    alert("pending.......");
+                }
+                break;
+            case 'confirmed':
+                if (paymentMethod !== 'cod') {
+                    if (isPaid === false) {
+                        alert('Yêu cầu thanh toán');
+                    } else {
+                        paymentMethod = 'shipper';
+                    }
+                }
+                break;
+            case 'shipper':
+                break;
+            case 'delivered':
+                alert("Đơn hàng đã được giao thành công");
+                break;
+            case 'canceled':
+                if (isPaid === true) {
+                    alert("Sẽ hoàn tiền");
+                }
+                break;
+            default:
+                alert("Nhập sai phương thức")
+                break;
+        }
+    }
+
+    // processOrder("pending","credit_card",false);
+    // processOrder("pending","crypto",false);
+    processOrder("confirmed","cod",false);
+    processOrder("canceled", "paypal", true);
+</script>
+</html>

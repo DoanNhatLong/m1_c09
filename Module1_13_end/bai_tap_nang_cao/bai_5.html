@@ -8,7 +8,8 @@
 
 </body>
 <script>
-    let array = [2, 7, 5, 8, 7, 3, 4];
+<!--    Tìm giá trị lớn thứ 2 trong mảng-->
+    let array = [2, 2, 4];
     let count = 0;
     array.sort((a, b) => b - a);
     console.log(array);
@@ -19,11 +20,14 @@
             break;
         }
     }
-    if (max2th === undefined) alert("Các phần tử đều băằng nhau");
+    if (max2th === undefined) alert("Các phần tử đều bằng nhau");
     for (let i = 0; i < array.length; i++) {
         array[i] === max2th && count++;
     }
-    alert(` Số lớn thứu 2 là : ${max2th} `)
-    alert(count);
+    if (max2th !== undefined) {
+        alert(` Số lớn thứ 2 là : ${max2th} `)
+        alert(count);
+    }
+
 </script>
 </html>

@@ -8,7 +8,9 @@
 
 <p id="array"></p>
 <script>
-    let side = +prompt("Nhập độ dài n của mảng");
+<!--   Kiểm tra mảng vừa nhập. Nếu các phần tử phía trước của mỗi phần tử đều là ước của nó thì hiện thị OK, không phải thì trả về NO -->
+
+let side = +prompt("Nhập độ dài n của mảng");
     let array = [];
     for (let i = 0; i < side; i++) {
         while (true) {
