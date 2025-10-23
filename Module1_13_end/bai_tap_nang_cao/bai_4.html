@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    let side = +prompt("Nhập độ rộng của hình thoi");
+    let html = `<pre>`;
+    for (let i = 1; i < side + 1; i++) {
+        html += ` ${" ".repeat(side - i)}${i}${" ".repeat(2 * i)}${i} <br>`
+    }
+    for (let j = side; j >= 1; j--) {
+        html += ` ${" ".repeat(side - j)}${j}${" ".repeat(2 * j)}${j} <br>`
+    }
+    html += `</pre>`
+    document.write(html);
+
+</script>
+</html>

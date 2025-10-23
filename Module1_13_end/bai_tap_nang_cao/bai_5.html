@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = [2, 7, 5, 8, 7, 3, 4];
+    let count = 0;
+    array.sort((a, b) => b - a);
+    console.log(array);
+    let max2th;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] !== array[0]) {
+            max2th = array[i];
+            break;
+        }
+    }
+    if (max2th === undefined) alert("Các phần tử đều băằng nhau");
+    for (let i = 0; i < array.length; i++) {
+        array[i] === max2th && count++;
+    }
+    alert(` Số lớn thứu 2 là : ${max2th} `)
+    alert(count);
+</script>
+</html>
