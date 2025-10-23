@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="array"></p>
+</body>
+<script>
+    function inputArrayNumber() {
+        let size = +prompt("Nhập độ dài n của mảng ");
+        while (size <= 0 || isNaN(size) || !Number.isInteger(size)) {
+            size = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
+        }
+        let array = [];
+        for (let i = 0; i < size; i++) {
+            while (true) {
+                let input = prompt(`Nhập phần tử vào mảng ( phần tử ${i + 1}):`);
+                if (input === null || input.trim() === "") {
+                    alert("Không được để trống!");
+                    continue;
+                }
+                let element = +input;
+                if (!isNaN(element)) {
+                    array.push(element);
+                    break;
+                } else {
+                    alert("Số bạn nhâp không thỏa yêu cầu");
+                }
+            }
+        }
+        document.getElementById("array").innerHTML = array;
+    }
+
+
+    function inputArray() {
+        let size = +prompt("Nhập độ dài n của mảng ");
+        while (size <= 0 || isNaN(size) || !Number.isInteger(size)) {
+            size = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
+        }
+
+        let array = [];
+        for (let i = 0; i < size; i++) {
+            while (true) {
+                let input = prompt(`Nhập phần tử vào mảng, ( phần tử ${i + 1}):`);
+                if (input === null || input.trim() === "") {
+                    alert("Không được để trống!");
+                    continue;
+                }
+                if ( /^[A-Za-z0-9]+$/.test(input)) {
+                    array.push(input);
+                    break;
+                } else {
+                    alert("Giá trị nhập không thỏa yêu cầu!");
+                }
+            }
+        }
+        document.getElementById("array").innerHTML = array;
+    }
+
+    inputArray();
+
+    function inputArrayChar() {
+        let size = +prompt("Nhập độ dài n của mảng ");
+        while (size <= 0 || isNaN(size) || !Number.isInteger(size)) {
+            size = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
+        }
+
+        let array = [];
+        for (let i = 0; i < size; i++) {
+            while (true) {
+                let input = prompt(`Nhập phần tử vào mảng, ( phần tử ${i + 1}):`);
+                if (input === null || input.trim() === "") {
+                    alert("Không được để trống!");
+                    continue;
+                }
+                if ( /^[A-Za-z]+$/.test(input)) {
+                    array.push(input);
+                    break;
+                } else {
+                    alert("Giá trị nhập không thỏa yêu cầu!");
+                }
+            }
+        }
+        document.getElementById("array").innerHTML = array;
+    }
+
+</script>
+</html>
