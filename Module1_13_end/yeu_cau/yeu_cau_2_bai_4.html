@@ -7,44 +7,51 @@
 <body>
 
 <script>
-<!--    Nếu x không có định dạng là 1 phần số (xx/yy) thì hiện thị "không phải là phân số-->
+    <!--    Nếu x không có định dạng là 1 phần số (xx/yy) thì hiện thị "không phải là phân số-->
     // Nếu x là phân số thì tiến hành đi rút gọn phân số đó về tối giản. => hiện thị phân số tối giản
     let string = prompt("Nhập vào chuỗi baạn muốn kiểm tra");
+    let min;
+    let divisor = 1;
+    alert(find(string));
 
-    function find(x) {
-        let index = x.indexOf("/");
-        let min;
-        if (index === -1) {
-            return ("Không phải là phân số ");
-        }
-        let array = x.split("");
-        let left = array.slice(0, index).join("");
-        let right = array.slice(index + 1).join("");
-        if (isNaN(+left) || isNaN(+right)) {
-            return ("Không phải là1 phân số ");
-        } else if (+right === 0) {
-            return ("Không phải là phân số ");
-        } else if (+left === 0) {
-            return ("0");
+    function find(str) {
+        let array = str.split("/");
+        if (array.length !== 2) {
+            return 'Không phải là phân số'
         } else {
-            let divisor = 1;
-            (+left > +right) ? min = +right : min = +left;
-            for (let i = 1; i <= min; i++) {
-                if (+left % i === 0) {
-                    if (+right % i === 0) {
-                        divisor = i;
-                    }
-                }
+            let left = +array[0];
+            let right = +array[1];
+            if (isNaN(left) || isNaN(right)) {
+                return ("Không phải llaf 1 phân số ")
+            } else if (left === 0) {
+                return 0
+            } else if (right === 0) {
+                return `Không phải phân số ! `
+            } else {
+                minDivisor(left, right);
             }
             if (divisor === 1) {
-                return array.join("");
+                return `${left}/${right}`
+            } else if (divisor === min && left !== min) {
+                return left / right;
             } else {
-                return (`${+left / divisor} / ${+right / divisor}`);
+                return (`${left / divisor} / ${right / divisor}`);
             }
         }
     }
 
-    alert(find(string));
+    function minDivisor(number1, number2) {
+        number1 > number2 ? min = number2 : min = number1;
+        for (let i = 2; i <= min; i++) {
+            if (number1 % i === 0) {
+                if (number2 % i === 0) {
+                    divisor = i;
+                }
+            }
+        }
+    }
+
+
 </script>
 
 </body>
