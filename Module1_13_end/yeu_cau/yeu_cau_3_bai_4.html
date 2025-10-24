@@ -8,24 +8,25 @@
 
 <script>
 
-<!--    Kiểm tra xem nếu tất cả các toạ độ [xi, yi] có thuộc tạo đồ thị hàm số trên không?-->
+    <!--    Kiểm tra xem nếu tất cả các toạ độ [xi, yi] có thuộc tạo đồ thị hàm số trên không?-->
 
 
-    function check(arr1,arr2) {
-        if (arr1.length!==arr2.length){
+    function check(arr1, arr2) {
+        if (arr1.length !== arr2.length) {
             return false;
-        }else{
+        } else {
             for (let i = 0; i < arr1.length; i++) {
-                if (arr2[i]!==2*arr1[i]+1){
+                if (arr2[i] !== 2 * arr1[i] + 1) {
                     return false;
                 }
             }
         }
         return true;
     }
-    let arrayX=[1,2,3];
-    let arrayY=[3,5,7];
-    alert(check(arrayX,arrayY));
+
+    let arrayX = [1, 2, 3];
+    let arrayY = [3, 5, 7];
+    alert(check(arrayX, arrayY));
 
 </script>
 </body>

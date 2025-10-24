@@ -8,19 +8,21 @@
 
 </body>
 <script>
-<!--    Nếu x,y,z  không phải 3 cạnh của 1 tam giác thì hiện thị "không phải là cạnh tam giác"-->
-    let sideX=+prompt("Nhập cạnh x của tam giác");
-    let sideY=+prompt("Nhập cạnh y của tam giác");
-    let sideZ=+prompt("Nhập cạnh z của tam giác");
-    function checkTriangle(x,y,z) {
-        if (x<=0 || y <=0 || z<0 || x+y<=z ||x+z<=y || y+z<=x){
+    <!--    Nếu x,y,z  không phải 3 cạnh của 1 tam giác thì hiện thị "không phải là cạnh tam giác"-->
+    let sideX = +prompt("Nhập cạnh x của tam giác");
+    let sideY = +prompt("Nhập cạnh y của tam giác");
+    let sideZ = +prompt("Nhập cạnh z của tam giác");
+
+    function checkTriangle(x, y, z) {
+        if (x <= 0 || y <= 0 || z < 0 || x + y <= z || x + z <= y || y + z <= x) {
             alert("Không phải 3 cạnh của tam giác ");
-        } else if (z===Math.sqrt(x*x+y*y)|| x===Math.sqrt(y*y+z*z) ||y===Math.sqrt(z*z+x*x)){
+        } else if (z === Math.sqrt(x * x + y * y) || x === Math.sqrt(y * y + z * z) || y === Math.sqrt(z * z + x * x)) {
             alert("Là 3 cạnh của một tam giác vuông");
         } else {
             alert("Chỉ là 3 cạnh của một tam giác");
         }
     }
-    checkTriangle(sideX,sideY,sideZ);
+
+    checkTriangle(sideX, sideY, sideZ);
 </script>
 </html>

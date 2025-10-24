@@ -8,14 +8,14 @@
 <p id="array"></p>
 
 <script>
-<!--    Nếu mảng tăng dần đều thì hiện thị OK, không phải thì trả về NO-->
+    <!--    Nếu mảng tăng dần đều thì hiện thị OK, không phải thì trả về NO-->
 
-    let side = +prompt("Nhập độ dài n của mảng (n<=20)");
-    while (side === 0 || side > 20) {
-        side = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
+    let size = +prompt("Nhập độ dài n của mảng (n<=20)");
+    while (size === 0 || size > 20) {
+        size = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
     }
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {
@@ -28,7 +28,7 @@
     }
     document.getElementById("array").innerHTML = array;
     let flag = true;
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         if (array[i] >= array[i + 1]) {
             flag = false;
         }

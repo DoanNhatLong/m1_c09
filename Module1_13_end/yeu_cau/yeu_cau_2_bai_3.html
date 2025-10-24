@@ -9,9 +9,9 @@
 
 <script>
 <!--    Nếu mảng đối xứng thì hiện thị OK, không phải thì trả về NO-->
-    let side = +prompt("Nhập độ dài n của mảng :");
+    let size = +prompt("Nhập độ dài n của mảng :");
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {
@@ -23,8 +23,8 @@
         }
     }
     let flag = true;
-    for (let i = 0; i < side; i++) {
-        if (array[i] !== array[side - 1 - i]) {
+    for (let i = 0; i < size; i++) {
+        if (array[i] !== array[size - 1 - i]) {
             flag = false
         }
     }
