@@ -6,9 +6,19 @@
 </head>
 <body>
 
+<h2>Product</h2>
+<div id="list"></div>
+<br>
+<input id="input" placeholder="Add Product">
+<button onclick="addProduct()">Thêm</button>
+
+
 </body>
 <script>
+    let productList = [];
+
     class Product {
+
         constructor(name) {
             this.name = name;
         }
@@ -23,15 +33,37 @@
             }
         }
     }
-    function searchProduct(keyword) {
 
-        
+    function render() {
+        const container = document.getElementById("list");
+        container.innerHTML = "";
+        productList.forEach((p, i) => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+      <b>${i + 1}. ${p.name}</b>
+      <button onclick="productList[${i}].editProduct(prompt('Sửa tên:'))">Sửa</button>
+      <button onclick="productList[${i}].deleteProduct()">Xóa</button>
+    `;
+            container.appendChild(div);
+        });
     }
-    
-    const sony= new Product("Sony");
-    const xiaomi=new Product("Xiaomi");
-    const vivo=new Product("Vivo");
-    sony.editProduct("Sony Xperia");
-    
+
+
+    function searchProduct(keyword) {
+        return Product.all.filter(element => element.name.includes(keyword));
+    }
+
+    function addProduct() {
+        const name = document.getElementById("input").value.trim();
+        if (name) {
+            productList.push(new Product(name));
+            render();
+        }
+    }
+
+
+    productList.push(new Product("Sony"));
+    console.log(productList);
+
 </script>
 </html>

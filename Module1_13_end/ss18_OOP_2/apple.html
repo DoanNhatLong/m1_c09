@@ -33,14 +33,14 @@
             this.weight = weight;
         }
 
+        isMale() {
+            return this.gender;
+        }
+
         eat(Apple) {
             Apple.decrease();
             this.weight++;
             Apple.getWeight();
-        }
-
-        isMale() {
-            return this.gender
         }
 
         setGender(setGender) {
@@ -49,6 +49,10 @@
 
         check(Apple) {
             Apple.isEmpty();
+        }
+
+        say(text) {
+            console.log(`${this.name} nói ${text} `);
         }
 
         getName() {
@@ -81,8 +85,6 @@
     alert(eva.getWeight());
     eva.eat(apple);
     alert(apple.getWeight());
-
-
 
 </script>
 
