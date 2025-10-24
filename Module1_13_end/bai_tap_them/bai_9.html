@@ -9,11 +9,11 @@
 <p id="array"></p>
 <p id="result"></p>
 <script>
-<!--    Đếm số lượng số có giá trị bằng giá trinh trung bình của mảng. -->
+    <!--    Đếm số lượng số có giá trị bằng giá trinh trung bình của mảng. -->
 
-    let side = +prompt("Nhập độ dài n của mảng");
+    let size = +prompt("Nhập độ dài n của mảng");
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {

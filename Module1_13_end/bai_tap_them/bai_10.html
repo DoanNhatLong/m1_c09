@@ -9,10 +9,10 @@
 <p id="array"></p>
 <p id="result"></p>
 <script>
-<!--    Hiện thị các số chính phương có trong mảng ( Số chính phương là các số ví dụ 1,4,9,16,25,36,49……)-->
-    let side = +prompt("Nhập độ dài n của mảng");
+    <!--    Hiện thị các số chính phương có trong mảng ( Số chính phương là các số ví dụ 1,4,9,16,25,36,49……)-->
+    let size = +prompt("Nhập độ dài n của mảng");
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {
@@ -24,13 +24,13 @@
         }
     }
     document.getElementById("array").innerHTML = array;
-    let checkArray=[];
-    for (let i = 0; i < side; i++) {
-        if (Number.isInteger(array[i]**(1/2))){
+    let checkArray = [];
+    for (let i = 0; i < size; i++) {
+        if (Number.isInteger(array[i] ** (1 / 2))) {
             checkArray.push(array[i]);
         }
     }
-    document.getElementById("result").innerHTML= checkArray;
+    document.getElementById("result").innerHTML = checkArray;
 </script>
 </body>
 </html>

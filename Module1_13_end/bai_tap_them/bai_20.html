@@ -10,10 +10,10 @@
 <p id="result"></p>
 <script>
 
-<!--Tính tổng các phần tử tử chẵn và ở vị trí lẻ    -->
-    let side = +prompt("Nhập độ dài n của mảng");
+    <!--Tính tổng các phần tử tử chẵn và ở vị trí lẻ    -->
+    let size = +prompt("Nhập độ dài n của mảng");
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {
@@ -27,7 +27,7 @@
 
     // document.getElementById("array").innerHTML = array;
     let total = 0;
-    for (let i = 0; i < side; i = i + 2) {
+    for (let i = 0; i < size; i = i + 2) {
         if (array[i] % 2 === 0) {
             total += array[i];
         }

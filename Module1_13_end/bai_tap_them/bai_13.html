@@ -8,10 +8,10 @@
 <p id="array"></p>
 <p id="result"></p>
 <script>
-<!--    Kiểm tra mảng vừa nhập. Nếu tất cả các phần tử trong mảng là số nguyên tố  thì hiện thị thông báo "OK", nếu không thoả mãn thì hiện thị "NO"-->
-    let side = +prompt("Nhập độ dài n của mảng");
+    <!--    Kiểm tra mảng vừa nhập. Nếu tất cả các phần tử trong mảng là số nguyên tố  thì hiện thị thông báo "OK", nếu không thoả mãn thì hiện thị "NO"-->
+    let size = +prompt("Nhập độ dài n của mảng");
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {
@@ -41,7 +41,7 @@
     }
 
     let check = true;
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         if (!isPrime(array[i])) {
             check = false;
             break;

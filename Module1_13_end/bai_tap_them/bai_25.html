@@ -8,11 +8,11 @@
 
 <p id="array"></p>
 <script>
-<!--   Kiểm tra mảng vừa nhập. Nếu các phần tử phía trước của mỗi phần tử đều là ước của nó thì hiện thị OK, không phải thì trả về NO -->
+    <!--   Kiểm tra mảng vừa nhập. Nếu các phần tử phía trước của mỗi phần tử đều là ước của nó thì hiện thị OK, không phải thì trả về NO -->
 
-let side = +prompt("Nhập độ dài n của mảng");
+    let size = +prompt("Nhập độ dài n của mảng");
     let array = [];
-    for (let i = 0; i < side; i++) {
+    for (let i = 0; i < size; i++) {
         while (true) {
             let element = +prompt("Nhập phần tử vào mảng ( là số):");
             if (isNaN(element) === false) {
@@ -25,7 +25,7 @@ let side = +prompt("Nhập độ dài n của mảng");
     }
     document.getElementById("array").innerHTML = array;
     let flag = true;
-    for (let i = side - 1; i >= 1; i--) {
+    for (let i = size - 1; i >= 1; i--) {
         for (let j = 0; j < i; j++) {
             if (array[i] % array[j] !== 0) {
                 flag = false;
