@@ -7,4 +7,31 @@
 <body>
 
 </body>
+<script>
+    class Product {
+        constructor(name) {
+            this.name = name;
+        }
+
+        editProduct(edit) {
+            this.name = edit;
+        }
+
+        deleteProduct() {
+            if (confirm("Bạn có chắc chắn muốn xóa không")) {
+                this.name = null;
+            }
+        }
+    }
+    function searchProduct(keyword) {
+
+        
+    }
+    
+    const sony= new Product("Sony");
+    const xiaomi=new Product("Xiaomi");
+    const vivo=new Product("Vivo");
+    sony.editProduct("Sony Xperia");
+    
+</script>
 </html>
