@@ -11,8 +11,7 @@
 <br>
 <input id="input" placeholder="Add Product">
 <button onclick="addProduct()">Thêm</button>
-
-
+<br>
 </body>
 <script>
     let productList = [];
@@ -25,45 +24,43 @@
 
         editProduct(edit) {
             this.name = edit;
+            render()
         }
 
-        deleteProduct() {
+        deleteProduct(index) {
             if (confirm("Bạn có chắc chắn muốn xóa không")) {
-                this.name = null;
+                productList.splice(index, 1);
             }
-        }
-    }
-
-    function render() {
-        const container = document.getElementById("list");
-        container.innerHTML = "";
-        productList.forEach((p, i) => {
-            const div = document.createElement("div");
-            div.innerHTML = `
-      <b>${i + 1}. ${p.name}</b>
-      <button onclick="productList[${i}].editProduct(prompt('Sửa tên:'))">Sửa</button>
-      <button onclick="productList[${i}].deleteProduct()">Xóa</button>
-    `;
-            container.appendChild(div);
-        });
-    }
-
-
-    function searchProduct(keyword) {
-        return Product.all.filter(element => element.name.includes(keyword));
-    }
-
-    function addProduct() {
-        const name = document.getElementById("input").value.trim();
-        if (name) {
-            productList.push(new Product(name));
             render();
         }
     }
 
+    function render() {
+        let length = productList.length;
+        let product =
+            ` <table border="1" style="border-collapse: collapse"  >
+            <th colspan="3"> <span>Product Name</span>
+                <span >${length} Product</span> </th>`;
+        for (let i = 0; i < length; i++) {
+            product += (`<tr>
+                  <td>  ${productList[i].name} </td>
+                  <td> <button onclick="productList[${i}].editProduct(prompt('Sửa tên:'))">Sửa</button> </td>
+                   <td>  <button onClick="productList[${i}].deleteProduct(${i})">Xóa</button> </td>
+                         </tr>`);
+        }
+        product += `</table>`;
+        document.getElementById("list").innerHTML = product;
 
-    productList.push(new Product("Sony"));
-    console.log(productList);
+    }
+
+
+    function addProduct() {
+        const name = document.getElementById("input").value;
+        productList.unshift(new Product(name));
+        document.getElementById("input").value = "";
+        render();
+    }
+
 
 </script>
 </html>
