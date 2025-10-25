@@ -7,55 +7,100 @@
 <body>
 
 <script>
-    class Rat {
-        constructor(name, weight, speed, status = true) {
+    class Animal {
+        constructor(name, weight, speed) {
             this.name = name;
             this.weight = weight;
             this.speed = speed;
-            this.status = status;
         }
 
-        sound() {
-            alert("Chít chít");
+        say(text) {
+            console.log(`nói :${text}`);
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(number) {
+            this.weight = number;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+
+        setSpeed(number) {
+            this.speed = number;
         }
     }
 
-    class Cat {
-        constructor(name, weight, maxSpeed) {
-            this.name = name;
-            this.weight = weight;
-            this.maxSpeed = maxSpeed;
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+        say(text) {
+            console.log(this.name + "meo meo" + text);
         }
 
         eat(rat) {
             if (rat.status === true) {
-                this.weight+=rat.weight;
-                rat.status=false;
+                this.say("Chuột còn sống");
+                this.weight += rat.weight;
+            } else {
+                this.say("Chuột chết không ăn ");
             }
-
         }
 
-        catch(rat){
-            if (this.maxSpeed>rat.speed){
-                alert(` Đã bắt được ${rat.name} `);
+        catch(rat) {
+            if (rat.speed < this.speed) {
+                this.eat(rat);
             } else {
-                alert(` Không bắt được ${rat.name} `);
+                rat.say("Đố bắt được");
             }
+        }
+
+    }
+
+    class Rat extends Animal {
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed);
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(boolean) {
+            this.status = boolean;
+        }
+
+        say(text) {
+            console.log(this.name + "chít chít" + text);
         }
 
 
     }
 
-    const tom = new Cat("tom", 15, 30);
-    const jerry = new Rat("jerry", 2, 20, true);
-
-    alert(jerry.status);
-    jerry.sound();
-    tom.catch(jerry);
-    tom.eat(jerry);
-    alert(` Cân nặng hện tại là ${tom.weight}`);
-    alert(` ${jerry.status}`);
-    tom.eat(jerry);
+    const tom = new Cat("Tom", 10, 10);
+    const rat1 = new Rat("Jerry", 2, 5, true);
+    const rat2 = new Rat("Jerry2", 2, 15, true);
+    const rat3 = new Rat("Jerry3", 2, 5, false);
+    let cage = [rat1, rat2, rat3];
+    for (let i = 0; i < 3; i++) {
+        tom.catch(cage[i]);
+    }
+    console.log(tom.getWeight());
 
 
 </script>
