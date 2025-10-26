@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Product</h2>
+<div id="list"></div>
+<br>
+<input id="input" placeholder="Add Product">
+<button onclick="addProduct()">Thêm</button>
+<br>
+</body>
+<script>
+    class Product {
+        productList = [];
+
+        constructor() {
+            let product =
+                ` <table ="1" style="border-collapse: collapse"  >
+                        <th colspan="3"> <span>Product Name</span>
+                         </th>`;
+            product += `</table>`;
+            document.getElementById("list").innerHTML = product;
+        }
+
+        addProduct(name) {
+            this.productList.push({name});
+            const lastTr = document.querySelector('table');
+            lastTr.innerHTML += `<tr><td>${name}</td></tr>`;
+
+        }
+    }
+
+    let products = new Product()
+
+    function addProduct() {
+        const name = document.getElementById("input").value;
+        products.addProduct(name)
+    }
+
+
+    // editProduct(edit) {
+    //     this.name = edit;
+    //     render()
+    // }
+
+
+
+    // let tr = document.createElement('tr');
+    // let td = document.createElement('td');
+    // let td1 = document.createElement('td');
+    // let td2 = document.createElement('td');
+    // td.textContent = name;
+    // tr.appendChild(td);
+    // tr.appendChild(td1);
+    // tr.appendChild(td2);
+
+    // document.createElement("product");
+    // render() {
+    //     let length = this.productList.length;
+    //     let product =
+    //         ` <table border="1" style="border-collapse: collapse"  >
+    //         <th colspan="3"> <span>Product Name</span>
+    //             <span >${length} Product</span> </th>`;
+    //     for (let i = 0; i < length; i++) {
+    //         product += (`<tr>
+    //               <td>  ${this.productList[i].name} </td>
+    //               <td> <button onclick="this.productList[${i}].editProduct(prompt('Sửa tên:'))">Sửa</button> </td>
+    //                <td>  <button onClick="this.productList[${i}].deleteProduct(${i})">Xóa</button> </td>
+    //                      </tr>`);
+    //     }
+    //     product += `</table>`;
+    //     document.getElementById("list").innerHTML = product;
+    //
+    // }
+
+    // deleteProduct(index) {
+    //     if (confirm("Bạn có chắc chắn muốn xóa không")) {
+    //         productList.splice(index, 1);
+    //     }
+    //     render();
+    // }
+
+
+    // function render() {
+    //     let length = productList.length;
+    //     let product =
+    //         ` <table border="1" style="border-collapse: collapse"  >
+    //         <th colspan="3"> <span>Product Name</span>
+    //             <span >${length} Product</span> </th>`;
+    //     for (let i = 0; i < length; i++) {
+    //         product += (`<tr>
+    //               <td>  ${productList[i].name} </td>
+    //               <td> <button onclick="productList[${i}].editProduct(prompt('Sửa tên:'))">Sửa</button> </td>
+    //                <td>  <button onClick="productList[${i}].deleteProduct(${i})">Xóa</button> </td>
+    //                      </tr>`);
+    //     }
+    //     product += `</table>`;
+    //     document.getElementById("list").innerHTML = product;
+    //
+    // }
+    //
+    //
+    // function addProduct() {
+    //     const name = document.getElementById("input").value;
+    //     productList.unshift(new Product(name));
+    //     document.getElementById("input").value = "";
+    //     render();
+    // }
+
+
+</script>
+</html>
