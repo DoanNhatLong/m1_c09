@@ -10,63 +10,80 @@
 <div id="list"></div>
 <br>
 <input id="input" placeholder="Add Product">
-<button onclick="addProduct()">Thêm</button>
+<button onclick="management.addProduct()">Thêm</button>
 <br>
 </body>
 <script>
-    let productList = [];
-
     class Product {
 
         constructor(name) {
             this.name = name;
         }
 
-        editProduct(edit) {
-            this.name = edit;
-            render()
+        getName() {
+            return this.name;
+        }
+
+        setName(newName) {
+            this.name = newName;
+        }
+
+
+    }
+
+    class Management {
+        constructor() {
+            this.productList = [];
+        }
+
+        editProduct(index) {
+            const product = this.productList[index];
+            const newName = prompt("Nhập tên mới:");
+            product.setName(newName);
+            this.render();
+
         }
 
         deleteProduct(index) {
             if (confirm("Bạn có chắc chắn muốn xóa không")) {
-                productList.splice(index, 1);
+                this.productList.splice(index, 1);
             }
-            render();
+            this.render();
         }
-    }
 
-    function render() {
-        let length = productList.length;
-        let product =
-            ` <table border="1" style="border-collapse: collapse"  >
+        addProduct(input) {
+            const name = document.getElementById("input");
+            const value = name.value || input;
+            this.productList.unshift(new Product(value));
+            document.getElementById("input").value = "";
+            this.render();
+        }
+
+        render() {
+            let length = this.productList.length;
+            let product =
+                ` <table border="1" style="border-collapse: collapse"  >
             <th colspan="3"> <span>Product Name</span>
                 <span >${length} Product</span> </th>`;
-        for (let i = 0; i < length; i++) {
-            product += (`<tr>
-                  <td>  ${productList[i].name} </td>
-                  <td> <button onclick="productList[${i}].editProduct(prompt('Sửa tên:'))">Sửa</button> </td>
-                   <td>  <button onClick="productList[${i}].deleteProduct(${i})">Xóa</button> </td>
+            for (let i = 0; i < length; i++) {
+                product += (`<tr>
+                  <td>  ${this.productList[i].name} </td>
+                  <td> <button onclick="management.editProduct(${i})">Sửa</button> </td>
+                   <td>  <button onClick="management.deleteProduct(${i})">Xóa</button> </td>
                          </tr>`);
+            }
+            product += `</table>`;
+            document.getElementById("list").innerHTML = product;
+
         }
-        product += `</table>`;
-        document.getElementById("list").innerHTML = product;
+
 
     }
 
-
-    function addProduct(input) {
-        const name = document.getElementById("input");
-        const value = name.value || input;
-        productList.unshift(new Product(value));
-        document.getElementById("input").value = "";
-        render();
-    }
-
-    addProduct("Sony");
-    addProduct("iPhone");
-    addProduct("Nokia");
-    render();
-
+    const management = new Management();
+    management.addProduct("Sony");
+    management.addProduct("iPhone");
+    management.addProduct("Nokia");
 
 </script>
 </html>
