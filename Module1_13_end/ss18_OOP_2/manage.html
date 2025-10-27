@@ -54,12 +54,18 @@
     }
 
 
-    function addProduct() {
-        const name = document.getElementById("input").value;
-        productList.unshift(new Product(name));
+    function addProduct(input) {
+        const name = document.getElementById("input");
+        const value = name.value || input;
+        productList.unshift(new Product(value));
         document.getElementById("input").value = "";
         render();
     }
+
+    addProduct("Sony");
+    addProduct("iPhone");
+    addProduct("Nokia");
+    render();
 
 
 </script>
