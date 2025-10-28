@@ -10,7 +10,7 @@
     let result=`<pre>`;
     let height=+prompt("Nhập chiều cao:")
     for (let i = 1; i <height+1 ; i++) {
-        result+=` ${" ".repeat(height*2-i)}${"*".repeat(i*2-1)}<br>`
+        result+=` ${" ".repeat(height-i)}${"*".repeat(i*2-1)}<br>`
     }
     result+=`</pre>`
     document.getElementById("result").innerHTML=result;
