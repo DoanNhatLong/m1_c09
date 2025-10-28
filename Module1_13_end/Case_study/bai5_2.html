@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array=[[1,4,6] , [5,16,13], [2,8]];
+
+    alert(count(array));
+
+    function count(arr) {
+        let newArray=arr.flat();
+        let count=0;
+        for (let i = 0; i < newArray.length; i++) {
+            if (isPrime(newArray[i])){
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+
+</html>

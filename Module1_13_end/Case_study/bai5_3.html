@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let max;
+    let min;
+    let array = [[1, 5, 6], [1, -2, 1], [2, 2, 1], [1, 1, 2]];
+
+    function find(arr) {
+        max = arr.flat().reduce((number1, number2) => number1 > number2 ? number1 : number2);
+        min = arr.flat().reduce((number1, number2) => number1 < number2 ? number1 : number2);
+    }
+    find(array);
+    alert(max);
+    alert(min);
+</script>
+</body>
+</html>

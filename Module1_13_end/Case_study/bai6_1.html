@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="display">
+
+</div>
+
+<button onclick="a.addProduct()">Mua vé</button>
+<button onclick="a.watchResult()">Xem kết quả</button>
+<br>
+
+</body>
+<script>
+
+
+    class MyNumber {
+        numberList = [];
+
+        constructor(array) {
+            this.array = array;
+        }
+
+        addProduct() {
+            let choose = +prompt(` Bạn có 2 lựa chọn:
+            1. Bạn muốn chọn số
+            2. Hệ thống tự random
+            `)
+            if (choose === 1) {
+                const value = [document.getElementById("number1").value,
+                    document.getElementById("number2").value,
+                    document.getElementById("number3").value,
+                    document.getElementById("number4").value,
+                    document.getElementById("number5").value,
+                    document.getElementById("number6").value]
+                this.numberList.push(new MyNumber(value));
+                this.check()
+                this.render();
+            }
+            if (choose === 2) {
+                const value = [];
+                value.push(Math.floor(Math.random() * 100));
+                value.push(Math.floor(Math.random() * 100));
+                value.push(Math.floor(Math.random() * 100));
+                value.push(Math.floor(Math.random() * 100));
+                value.push(Math.floor(Math.random() * 100));
+                value.push(Math.floor(Math.random() * 100));
+                this.numberList.push(new MyNumber(value));
+                this.check();
+                this.render();
+            }
+        }
+
+        render() {
+            let display = '';
+            for (let i = 0; i < this.numberList.length; i++) {
+                display += `
+            <div>
+                <input type="number" disabled placeholder="${this.numberList[i].array[0]}"  >
+                <input type="number" disabled placeholder="${this.numberList[i].array[1]}"  >
+                 <input type="number" disabled placeholder="${this.numberList[i].array[2]}"  >
+                    <input type="number" disabled placeholder="${this.numberList[i].array[3]}" >
+                <input type="number" disabled placeholder="${this.numberList[i].array[4]}" >
+                    <input type="number" disabled placeholder="${this.numberList[i].array[5]}" >
+</div>`
+            }
+
+            display += `<input type="number" id="number1"/>
+            <input type="number" id="number2"/>
+            <input type="number" id="number3"/>
+            <input type="number" id="number4"/>
+            <input type="number" id="number5"/>
+            <input type="number" id="number6"/>`
+
+            document.getElementById("display").innerHTML = display;
+        }
+
+        check() {
+
+        }
+
+        watchResult() {
+            const result = this.createResult();
+            let win = 2;
+            for (let i = 0; i < this.numberList.length; i++) {
+                for (let j = 5; j >= 3; j--) {
+                    if (this.numberList[i].array[j] !== result[j]) {
+                        win = 0
+                    }
+                }
+            }
+            win !== 0 ? alert("Bingo") : alert("Chúc bạn may mắn lần sau");
+        }
+
+        createResult() {
+            const result = [];
+            result.push(Math.floor(Math.random() * 100));
+            result.push(Math.floor(Math.random() * 100));
+            result.push(Math.floor(Math.random() * 100));
+            result.push(Math.floor(Math.random() * 100));
+            result.push(Math.floor(Math.random() * 100));
+            result.push(Math.floor(Math.random() * 100));
+            return result;
+        }
+    }
+    const a = new MyNumber();
+    a.render();
+    console.log(a.numberList);
+
+
+</script>
+</html>
