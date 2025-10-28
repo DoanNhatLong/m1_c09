@@ -6,6 +6,99 @@
 </head>
 <body>
 
+<div id="display">
 
+</div>
+
+<button onclick="addProduct()">Mua vé</button>
+<button onclick="watchResult()">Xem kết quả</button>
+<br>
+<script>
+
+    class Ticket {
+        constructor(number) {
+            this.ticket = number;
+        }
+    }
+
+    numberList = [];
+
+    function addProduct() {
+        let choose = +prompt(` Bạn có 2 lựa chọn:
+            1. Bạn muốn chọn số
+            2. Hệ thống tự random
+            `)
+        if (choose === 1) {
+            const value = [document.getElementById("number1").value,
+                document.getElementById("number2").value,
+                document.getElementById("number3").value,
+                document.getElementById("number4").value,
+                document.getElementById("number5").value,
+                document.getElementById("number6").value]
+            numberList.push(new Ticket(value));
+            render();
+        }
+        if (choose === 2) {
+            const value = [];
+            value.push(Math.floor(Math.random() * 100));
+            value.push(Math.floor(Math.random() * 100));
+            value.push(Math.floor(Math.random() * 100));
+            value.push(Math.floor(Math.random() * 100));
+            value.push(Math.floor(Math.random() * 100));
+            value.push(Math.floor(Math.random() * 100));
+            numberList.push(new Ticket(value));
+            render()
+        }
+    }
+
+    function render() {
+        let display = `<input type="number" id="number1"/>
+            <input type="number" id="number2"/>
+            <input type="number" id="number3"/>
+            <input type="number" id="number4"/>
+            <input type="number" id="number5"/>
+            <input type="number" id="number6"/>`
+        for (let i = 0; i < numberList.length; i++) {
+            display += `
+            <div>
+                <input type="number" disabled placeholder="${numberList[i].ticket[0]}"  >
+                <input type="number" disabled placeholder="${numberList[i].ticket[1]}"  >
+                 <input type="number" disabled placeholder="${numberList[i].ticket[2]}"  >
+                    <input type="number" disabled placeholder="${numberList[i].ticket[3]}" >
+                <input type="number" disabled placeholder="${numberList[i].ticket[4]}" >
+                    <input type="number" disabled placeholder="${numberList[i].ticket[5]}" >
+</div>`
+        }
+        document.getElementById("display").innerHTML = display;
+    }
+
+    function watchResult() {
+        const result = createResult();
+        let win = 2;
+        for (let i = 0; i < numberList.length; i++) {
+            for (let j = 5; j >= 3; j--) {
+                if (this.numberList[i].ticket[j] !== result[j]) {
+                    win = 0
+                }
+            }
+        }
+        win !== 0 ? alert("Bingo") : alert("Chúc bạn may mắn lần sau");
+    }
+
+    function createResult() {
+        const result = [];
+        result.push(Math.floor(Math.random() * 100));
+        result.push(Math.floor(Math.random() * 100));
+        result.push(Math.floor(Math.random() * 100));
+        result.push(Math.floor(Math.random() * 100));
+        result.push(Math.floor(Math.random() * 100));
+        result.push(Math.floor(Math.random() * 100));
+        return result;
+
+
+    }
+
+    render();
+</script>
 </body>
 </html>
