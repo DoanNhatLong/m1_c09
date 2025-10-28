@@ -45,15 +45,9 @@
             render();
         }
         if (choose === 2) {
-            const value = [];
-            value.push(Math.floor(Math.random() * 100));
-            value.push(Math.floor(Math.random() * 100));
-            value.push(Math.floor(Math.random() * 100));
-            value.push(Math.floor(Math.random() * 100));
-            value.push(Math.floor(Math.random() * 100));
-            value.push(Math.floor(Math.random() * 100));
-            numberList.push(new Ticket(value));
-            render()
+            const number=createRandom();
+            numberList.push(new Ticket(number));
+            render();
         }
     }
 
@@ -79,18 +73,18 @@
     }
 
     function watchResult() {
-        const result = createResult();
-        let win = 2;
+        const result = createRandom();
+        let win = 3;
         for (let i = 0; i < numberList.length; i++) {
             for (let j = 5; j >= 3; j--) {
-                if (this.numberList[i].ticket[j] !== result[j]) {
+                if (numberList[i].ticket[j] !== result[j]) {
                     win = 0;
                     break;
                 }
             }
             if (win !== 0) {
                 for (let j = 2; j > 0; j--) {
-                    if ((this.numberList[i].ticket[j] !== result[j])) {
+                    if ((numberList[i].ticket[j] !== result[j])) {
                         win = 1;
                         break;
                     } else if (numberList[i].ticket[0] !== result[0]) {
@@ -101,7 +95,7 @@
         }
         switch (win) {
             case 0:
-                alert("Chúc baạn may mắn lần sau");
+                alert("Chúc bạn may mắn lần sau");
                 break;
             case 1:
                 alert("Trúng giải khuyến khích");
@@ -115,7 +109,7 @@
         }
     }
 
-    function createResult() {
+    function createRandom() {
         const result = [];
         result.push(Math.floor(Math.random() * 100));
         result.push(Math.floor(Math.random() * 100));
