@@ -21,7 +21,7 @@
         }
     }
 
-    numberList = [];
+    let numberList = [];
 
     function addProduct() {
         let choose = +prompt(` Bạn có 2 lựa chọn:
@@ -35,6 +35,12 @@
                 document.getElementById("number4").value,
                 document.getElementById("number5").value,
                 document.getElementById("number6").value]
+            for (let i = 0; i < value.length; i++) {
+                if (value[i] === "" || isNaN(value[i]) || value[i] < 0 || value[i] % 1 !== 0 || value[i] > 99) {
+                    alert("Vui lòng nhập số nguyên nhỏ hơn 100");
+                    return;
+                }
+            }
             numberList.push(new Ticket(value));
             render();
         }
@@ -78,11 +84,35 @@
         for (let i = 0; i < numberList.length; i++) {
             for (let j = 5; j >= 3; j--) {
                 if (this.numberList[i].ticket[j] !== result[j]) {
-                    win = 0
+                    win = 0;
+                    break;
+                }
+            }
+            if (win !== 0) {
+                for (let j = 2; j > 0; j--) {
+                    if ((this.numberList[i].ticket[j] !== result[j])) {
+                        win = 1;
+                        break;
+                    } else if (numberList[i].ticket[0] !== result[0]) {
+                        win = 2;
+                    }
                 }
             }
         }
-        win !== 0 ? alert("Bingo") : alert("Chúc bạn may mắn lần sau");
+        switch (win) {
+            case 0:
+                alert("Chúc baạn may mắn lần sau");
+                break;
+            case 1:
+                alert("Trúng giải khuyến khích");
+                break;
+            case 2:
+                alert("Trung giải nhì");
+                break;
+            case 3:
+                alert("Trúng giải đặc biệt");
+                break;
+        }
     }
 
     function createResult() {
@@ -94,8 +124,6 @@
         result.push(Math.floor(Math.random() * 100));
         result.push(Math.floor(Math.random() * 100));
         return result;
-
-
     }
 
     render();
