@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập chuỗi cần chuẩn hóa ");
+
+    main(string);
+
+    function main(string) {
+        alert(string);
+        let newString = (repair(string));
+        let newArray = newString.split(" ");
+        alert(newArray.reduce((a, b) => a.length > b.length ? a : b));
+    }
+
+    function repair(str) {
+        let newString = str.replace(/\s+/g, " ").trim().toLowerCase();
+        let array = newString.split("");
+        array[0] = array[0].toUpperCase();
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] !== " " && array[i - 1] === " ") {
+                array[i] = array[i].toUpperCase();
+            }
+        }
+        alert(array.join(""));
+        return array.join("");
+    }
+
+
+</script>
+
+</body>
+</html>

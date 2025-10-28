@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let total=0;
+    do {
+        number = +prompt(
+            `Menu
+            1.Cafe 2. Cam 3. Sting 4. Aqua 5. Coca 6.Coconut 7.Kết thúc chương trình \n
+            Tổng tiền: ${total}
+
+            `)
+        switch (number) {
+            case 1:
+                let orderCafe = +prompt(`Giá 15000, nhập số lượng`);
+                total+=15000*orderCafe;
+                break;
+            case 2:
+                let orderCam = +prompt(`Giá 17000, nhập số lượng`);
+                total+=17000*orderCam;
+                break;
+            case 3:
+                let orderSting = +prompt(`Giá 10000, nhập số lượng`);
+                total+=10000*orderSting;
+                break;
+            case 4:
+                let orderAqua = +prompt(`Giá 5000, nhập số lượng`);
+                total+=17000*orderAqua;
+                break;
+            case 5:
+                let orderCoca = +prompt(`Giá 15000, nhập số lượng`);
+                total+=17000*orderCoca;
+                break;
+            case 6:
+                let orderCoconut = +prompt(`Giá 15000, nhập số lượng`);
+                total+=17000*orderCoconut;
+                break;
+            case 7:
+                confirm("Banj có muốn thoát không") ? number = 7 : number = 0;
+        }
+    } while (number !== 7)
+</script>
+
+</body>
+</html>

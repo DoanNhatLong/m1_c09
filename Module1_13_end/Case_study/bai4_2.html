@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let string = prompt("Nhập vào chuỗi");
+    let array = string.split("");
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] === array[j]) {
+                array.splice(j, 1);
+                j--;
+            }
+        }
+    }
+    alert(array.length);
+
+</script>
+</html>

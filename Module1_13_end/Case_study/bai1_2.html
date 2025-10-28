@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let height = +prompt("Nhập chiều cao: ");
+    for (let i = 1; i < height + 1; i++) {
+        if (i === height || i === 1) {
+            console.log(`${"*".repeat(i)}`);
+        } else {
+            console.log(`*${" ".repeat(i - 2)}*`);
+        }
+    }
+</script>
+</html>

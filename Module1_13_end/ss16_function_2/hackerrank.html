@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // function bonAppetit(bill, k, b) {
+    //     bill.splice(k,1);
+    //     let total=bill.reduce((a,b)=>a+b)/2;
+    //     let d=b-total;
+    //     if (d===0){
+    //         return "Bon Appetit";
+    //     } else return d;
+    // }
+
+    function sockMerchant(n, ar) {
+        let count=0;
+        for (let i = 0; i < n; i++) {
+            for (let j = i+1; j <n ; j++) {
+                if (ar[i]===ar[j]){
+                    count++;
+                    ar.splice(j,1);
+                    ar.splice(i,1);
+                    i--;
+                    j--;
+                }
+
+            }
+
+        }
+    }
+</script>
+
+</body>
+</html>

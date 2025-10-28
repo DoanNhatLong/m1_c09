@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tax;
+    let wage = +prompt("Nhập lương (triệu dồng)");
+    if (wage < 7) {
+        tax = wage * 5 / 100;
+    } else if (wage < 15) {
+        tax = wage / 10;
+    } else {
+        tax = wage * 20/100;
+    }
+    alert(tax);
+
+</script>
+
+</body>
+</html>

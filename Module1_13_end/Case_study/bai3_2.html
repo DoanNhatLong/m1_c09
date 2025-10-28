@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let arrayA = [7, 2, 5, 3, 5, 5];
+    let arrayB = [2, 5, 4, 6, 8];
+    let newArray = [];
+    for (let i = 0; i < arrayB.length; i++) {
+        if (!arrayA.includes(arrayB[i])) {
+            newArray.push(arrayB[i]);
+        }
+    }
+    console.log(newArray);
+</script>
+</body>
+</html>

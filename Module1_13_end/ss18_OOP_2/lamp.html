@@ -8,8 +8,8 @@
 
 <script>
     class ElectricLamp {
-        constructor(status = true) {
-            this.status = status;
+        constructor() {
+            this.status = false;
         }
 
         turnOff() {
@@ -24,11 +24,12 @@
     }
 
     class SwitchButton {
-        constructor(status = true, lamp) {
-            this.status = status;
-            this.lamp = lamp;
+        constructor() {
+            this.status = false;
+            this.lamp = null;
         }
-        connectToLamp(Electriclamp){
+        connectToLamp(lamp){
+            this.lamp=lamp
             alert(`Đã kết nối được`);
         }
 
@@ -43,7 +44,7 @@
     }
 
     const lamp1 = new ElectricLamp(true);
-    const switch1 = new SwitchButton(true,lamp1);
+    const switch1 = new SwitchButton(true);
     switch1.connectToLamp(lamp1);
     switch1.switchOff();
     switch1.switchOn();

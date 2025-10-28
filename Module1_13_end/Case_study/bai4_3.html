@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let string1 = "toashibaai";
+    let string2 = "xiaomi";
+
+    function commonCharacter(str1, str2) {
+        let count = 0;
+        let arr1 = str1.split("");
+        let arr2 = str2.split("");
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = i + 1; j < arr1.length; j++) {
+                if (arr1[i] === arr1[j]) {
+                    arr1.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = i + 1; j < arr2.length; j++) {
+                if (arr2[i] === arr2[j]) {
+                    arr2.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (string1[i] === string2[j]) {
+                    count++;
+                    break;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    alert(commonCharacter(string1, string2));
+</script>
+</body>
+</html>

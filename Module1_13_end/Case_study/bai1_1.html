@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+
+<script>
+    let width = +prompt("Nhập chiều dài :");
+    let height = +prompt("Nhập chiều rộng");
+    let result = '<pre>'
+    for (let i = 1; i < height + 1; i++) {
+        if (i === 1 || i === height) {
+            result +=`${"*".repeat(width)}<br>`;
+        } else {
+            result +=`*${" ".repeat(width - 2)}*<br>`;
+        }
+    }
+    result += '</pre>';
+    document.getElementById("result").innerHTML = result;
+
+</script>
+
+</body>
+</html>

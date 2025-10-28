@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let numberUp = [5, 8, 9, 8];
+    let numberDown = [4, 8, 12, 5];
+    let indexMax = 0;
+    for (let i = 0; i < numberUp.length - 1; i++) {
+        let j = i;
+        if (numberUp[i] / numberDown[j] < numberUp[i + 1] / numberDown[j + 1]) {
+            indexMax = i + 1;
+        }
+    }
+    alert(indexMax);
+</script>
+</body>
+</html>

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0c9a861-03de-4105-91b3-79ed6ab01f6f" name="Changes" comment="bai_tap_oop">
-      <change afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss16_function_2/hackerrank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss17_OOP/rectangle.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss17_OOP/rectangle.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cat_mouse.html" beforeDir="false" afterPath="$PROJECT_DIR$/cat_mouse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple.html" beforeDir="false" afterPath="$PROJECT_DIR$/apple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/lamp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,23 @@
       <workItem from="1761393885592" duration="169000" />
       <workItem from="1761395033472" duration="7654000" />
       <workItem from="1761481151314" duration="146000" />
-      <workItem from="1761482026680" duration="3475000" />
+      <workItem from="1761482026680" duration="3793000" />
+      <workItem from="1761486181275" duration="66000" />
+      <workItem from="1761529427721" duration="16000" />
+      <workItem from="1761529940459" duration="2369000" />
+      <workItem from="1761532518908" duration="10000" />
+      <workItem from="1761533083894" duration="22000" />
+      <workItem from="1761533992833" duration="1517000" />
+      <workItem from="1761540824077" duration="113000" />
+      <workItem from="1761541247314" duration="126000" />
+      <workItem from="1761547969280" duration="349000" />
+      <workItem from="1761548339520" duration="925000" />
+      <workItem from="1761549454330" duration="4419000" />
+      <workItem from="1761559673098" duration="783000" />
+      <workItem from="1761562006875" duration="1796000" />
+      <workItem from="1761570717656" duration="3089000" />
+      <workItem from="1761575036028" duration="590000" />
+      <workItem from="1761616860510" duration="140000" />
     </task>
     <task id="LOCAL-00001" summary="bai_tap_oop">
       <option name="closed" value="true" />
@@ -100,7 +118,31 @@
       <option name="project" value="LOCAL" />
       <updated>1761404458555</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="bai_tap_oop">
+      <option name="closed" value="true" />
+      <created>1761485831460</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761485831460</updated>
+    </task>
+    <task id="LOCAL-00004" summary="bai_tap_oop">
+      <option name="closed" value="true" />
+      <created>1761549213395</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761549213395</updated>
+    </task>
+    <task id="LOCAL-00005" summary="bai_tap_oop">
+      <option name="closed" value="true" />
+      <created>1761563806749</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761563806749</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
