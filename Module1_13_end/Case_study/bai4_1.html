@@ -18,7 +18,7 @@
         alert(string);
         let newString = (repair(string));
         let newArray = newString.split(" ");
-        alert(newArray.reduce((a, b) => a.length > b.length ? a : b));
+        alert(newArray.reduce((element1, element2) => element1.length > element2.length ? element1 : element2));
     }
 
     function repair(str) {
