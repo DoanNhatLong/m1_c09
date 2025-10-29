@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string2 = "";
+    let string = "LLLjk  is   iU";
+    let array = new Array(2);
+    checkString(string);
+
+    function checkString(str) {
+        let countUp = 0;
+        let countDown = 0;
+        if (str.length === 0) {
+            array = [0, 0];
+        }
+
+        for (let i = 0; i < str.length; i++) {
+            if ("a" <= str[i] && str[i] <= "z") {
+                countDown++;
+            } else if ("A" <= str[i] && str[i] <= "Z") {
+                countUp++;
+            }
+        }
+        array[0] = countUp;
+        array[1] = countDown;
+        return array;
+    }
+
+    console.log(array);
+
+
+</script>
+</body>
+</html>

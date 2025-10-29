@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    let size = +prompt("Nhập độ dài n của mảng ");
+    while (size <= 0 || isNaN(size) || !Number.isInteger(size) || size > 50) {
+        size = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
+    }
+    let array = [];
+    for (let i = 0; i < size; i++) {
+        while (true) {
+            let input = prompt(`Nhập phần tử vào mảng ( phần tử ${i + 1}):`);
+            if (input === null || input.trim() === "") {
+                alert("Không được để trống!");
+                continue;
+            }
+            let element = +input;
+            if (!isNaN(element)) {
+                array.push(element);
+                break;
+            } else {
+                alert("Số bạn nhâp không thỏa yêu cầu");
+            }
+        }
+    }
+    console.log(array);
+
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (let i = 2; i < number/2; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let total = 0;
+
+
+    for (let i = 0; i < array.length; i++) {
+        if (isPrime(i) === true) {
+            total += array[i];
+        }
+    }
+    alert(total);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="result">
+
+</div>
+<br>
+<br>
+
+<button onclick="addProduct()"> Thêm</button>
+
+<script>
+    class Computer {
+        constructor(id, name, company, price) {
+            this._id = id;
+            this._name = name;
+            this._company = company;
+            this._price = price;
+        }
+
+
+        getId() {
+            return this._id;
+        }
+
+        setId(value) {
+            this._id = value;
+        }
+
+        getName() {
+            return this._name;
+        }
+
+        setName(value) {
+            this._name = value;
+        }
+
+        getProduct() {
+            return this._company;
+        }
+
+        setProduct(value) {
+            this._company = value;
+        }
+
+        getPrice() {
+            return this._price;
+        }
+
+        setPrice(value) {
+            this._price = value;
+        }
+
+        toString() {
+            return `ID: ${this.getId()}, Name: ${this.getName()}, Company: ${this.getProduct()}, Price: ${this.getPrice()}`;
+        }
+    }
+
+    let list = [new Computer(1, 2, 3, 4), new Computer(3, 4, 5, 6)];
+
+    function addProduct() {
+        let id = prompt("Nhập ID");
+        let name = prompt("Nhập name");
+        let company = prompt("Nhập company");
+        let price = prompt("Nhập price");
+        if (id !== "" && name !== "" && price !== "" && company !== "") {
+            list.push(new Computer(id, name, company, price));
+            display(list)
+        } else {
+            alert("Các trường không được để trống")
+        }
+    }
+
+    function display(item) {
+        let tableString = `
+            <table border="1" >
+                    <tr>
+                        <th>Mã</th>
+                        <th>Tên</th>
+                        <th>Hãng</th>
+                        <th>Price</th>
+                         <th>Lấy thông tin</th>
+                    </tr>
+        `;
+        for (let i = 0; i < item.length; i++) {
+            tableString += `
+                <tr>
+                    <td>${item[i].getId()}</td>
+                    <td>${item[i].getName()}</td>
+                    <td>${item[i].getProduct()}</td>
+                    <td>${item[i].getPrice()}</td>
+                     <td><button onclick="alert('${item[i].toString()}')"> Lấy thông tin</button></td>
+                </tr>
+            `;
+        }
+        tableString += `
+            </table>
+        `;
+        document.getElementById("result").innerHTML = tableString;
+
+    }
+
+    display(list);
+    console.log(list[0].toString());
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [0, 2, 3, 2, 1, 8, 9, 0, 5, 8, 12];
+
+    function findFibonacci(arr) {
+        let newArray = [];
+        for (const number of arr) {
+            if (Number.isInteger((Math.sqrt((5 * number * number) + 4)))
+                || Number.isInteger(Math.sqrt((5 * number * number) - 4))) {
+                newArray.push(number);
+            }
+        }
+        newArray.sort((number1, number2) => number1 - number2);
+        return newArray;
+    }
+
+    console.log(findFibonacci(array));
+
+
+    // /Cách  dùng vòng lặp.
+    // let fibonacci = [];
+    // for (let a = 0, b = 1, i = 0; i < 20; i++) {
+    //     fibonacci.push(a);
+    //     let c = a + b;
+    //     a = b;
+    //     b = c;
+    // }
+    // function findFibonacci(arr) {
+    //     let newArray = [];
+    //     for (const number of arr) {
+    //         if (fibonacci.includes(number)) {
+    //             newArray.push(number);
+    //         }
+    //     }
+    //     newArray.sort((number1, number2) => number1 - number2);
+    //     return newArray;
+    // }
+    //
+    // console.log(findFibonacci(array));
+
+
+</script>
+
+</body>
+</html>
