@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.rtl.css">
+    <script src="../../bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+    <h3 class="text-center text-primary mb-4">Thêm mới sản phẩm</h3>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="input-group">
+                <input class="form-control form-control-sm" id="id" placeholder="Nhập mã sản phẩm">
+                <input class="form-control form-control-sm" id="name" placeholder="Nhập tên sản phẩm">
+                <input class="form-control form-control-sm" id="price" placeholder="Nhập giá sản phẩm">
+                <button class="btn btn-success btn-sm" onclick="addNewProduct()">Thêm mới</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <h5 class="card-title mb-0">Danh sách sản phẩm</h5>
+                    <small class="text-muted">Số lượng: <span id="quantity" class="fw-bold text-primary"></span></small>
+                </div>
+            </div>
+
+            <div id="result" class="table-responsive"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    class Product {
+        constructor(id, name, price) {
+            this._id = id;
+            this._name = name;
+            this._price = price;
+        }
+
+        getId() {
+            return this._id;
+        }
+
+        setId(value) {
+            this._id = value;
+        }
+
+        getName() {
+            return this._name;
+        }
+
+        setName(value) {
+            this._name = value;
+        }
+
+        getPrice() {
+            return this._price;
+        }
+
+        setPrice(value) {
+            this._price = value;
+        }
+    }
+
+    let productList = [new Product(1, "Sam sung", 100), new Product(2, "Nokia", 200), new Product(3, "iphone", 300)];
+    display(productList);
+
+    function addNewProduct() {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        if (id !== "" && name !== "" && price !== "") {
+
+            productList.push(new Product(id, name, price));
+            document.getElementById("id").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("price").value = "";
+            display(productList)
+        } else {
+            alert("Các trường không được để trống")
+        }
+    }
+
+    function deleteByIndex(index) {
+        let conf = confirm(`Bạn có muốn xoá sản phẩm ${productList[index].getName()} không?`)
+        if (conf) {
+            productList.splice(index, 1);
+            display(productList);
+        }
+    }
+
+    function editByIndex(index) {
+        productList[index].setId(+prompt("Baạn muốn đổi id thế nào?"));
+        productList[index].setName(prompt("Baạn muốn đổi name thế nào?"));
+        productList[index].setPrice(+prompt("Baạn muốn đổi price thế nào?"));
+        display(productList);
+    }
+
+    function display(list) {
+        list.sort(function (product1, product2) {
+            return product2.getPrice() - product1.getPrice();
+        })
+        let tableString = `
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã</th>
+                        <th>Tên</th>
+                        <th>Giá</th>
+                        <th>Sửa</th>
+                        <th>Xoá</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+        for (let i = 0; i < list.length; i++) {
+            tableString += `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${list[i].getId()}</td>
+                    <td>${list[i].getName()}</td>
+                    <td>${list[i].getPrice()}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editByIndex(${i})">Sửa</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="deleteByIndex(${i})">Xoá</button>
+                    </td>
+                </tr>
+            `;
+        }
+        tableString += `
+                </tbody>
+            </table>
+        `;
+        document.getElementById("result").innerHTML = tableString;
+        document.getElementById("quantity").innerText = list.length;
+    }
+</script>
+
+</body>
+</html>
