@@ -61,7 +61,7 @@
         }
     }
 
-    let list = [new Computer(1, 2, 3, 4), new Computer(3, 4, 5, 6)];
+    let list = [new Computer(1, 2, 3, 4), new Computer(3, 4, 5, 6) , new Computer(4,4,4,4,)];
 
     function addProduct() {
         let id = prompt("Nhập ID");
@@ -76,6 +76,11 @@
         }
     }
 
+    function sortPrice() {
+        list.sort((price1,price2)=>price1.getPrice()-price2.getPrice());
+        display(list);
+    }
+
     function display(item) {
         let tableString = `
             <table border="1" >
@@ -83,7 +88,7 @@
                         <th>Mã</th>
                         <th>Tên</th>
                         <th>Hãng</th>
-                        <th>Price</th>
+                        <th> <button onclick="sortPrice()"> Price </button></th>
                          <th>Lấy thông tin</th>
                     </tr>
         `;
