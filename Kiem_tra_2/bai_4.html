@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+table{
+    align-items: center;
+    text-align: center;
+}
+td{
+    width: 100px;
+    height: 40px;
+}
+thead{
+align-content: center;
+}
+</style>
+<body>
+
+<div id="display"></div>
+
+<script>
+    class Phone {
+        constructor(number, name, address) {
+            this._number = number;
+            this._name = name;
+            this._address = address;
+        }
+
+
+        getNumber() {
+            return this._number;
+        }
+
+        setNumber(value) {
+            this._number = value;
+        }
+
+        getName() {
+            return this._name;
+        }
+
+        setName(value) {
+            this._name = value;
+        }
+
+        getAddress() {
+            return this._address;
+        }
+
+        setAddress(value) {
+            this._address = value;
+        }
+    }
+
+    let list = [new Phone(1, 2, 3), new Phone(4, 5, 6) , new Phone(6,7,8) ];
+    display(list);
+
+    function display(item) {
+        let tableString = `
+            <table border="1" >
+                    <thead> <h2> Quản lí danh bạ </h2> </thead>
+                    <tr>
+                        <th> Số ĐT </th>
+                        <th> Tên</th>
+                         <th>Địa chỉ</th>
+                         <th>Xóa</th>
+                    </tr>
+        `;
+        for (let i = 0; i < item.length; i++) {
+            tableString += `
+                <tr>
+                    <td>${item[i].getNumber()}</td>
+                    <td>${item[i].getName()}</td>
+                    <td>${item[i].getAddress()}</td>
+                    <td><button onclick="deletePhone(${i})"> Xóa số</button></td>
+
+                </tr>
+            `;
+        }
+        tableString += `
+            </table>
+        `;
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function deletePhone(index) {
+        list.splice(index,1);
+        display(list);
+    }
+
+
+</script>
+
+</body>
+</html>

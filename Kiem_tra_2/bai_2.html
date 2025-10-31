@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let array = [str[0]];
+        let count = 0;
+        for (let i = 1; i < str.length; i++) {
+            if (/[a-zA-Z]/.test(str[i]) && str[i - 1] === " ") {
+                array.push(str[i].toUpperCase());
+                count++;
+            }
+        }
+        if (count === 0) {
+            alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+        } else {
+            alert(array.join(""));
+        }
+    }
+
+    checkString("OliKi      oKI   fyuk");
+</script>
+
+</body>
+</html>

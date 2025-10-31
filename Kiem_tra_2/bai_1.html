@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // let size = +prompt("Nhập độ dài n của mảng ");
+    // while (size <= 0 || isNaN(size) || !Number.isInteger(size) || size > 15 || size % 3 !== 0) {
+    //     size = +prompt(" n không hợp lệ, vui lòng nhập lại: ");
+    // }
+    // let array = [];
+    // for (let i = 0; i < size; i++) {
+    //     while (true) {
+    //         let input = prompt(`Nhập phần tử vào mảng ( phần tử ${i + 1}):`);
+    //         if (input === null || input.trim() === "") {
+    //             alert("Không được để trống!");
+    //             continue;
+    //         }
+    //         let element = +input;
+    //         if (!isNaN(element)) {
+    //             array.push(element);
+    //             break;
+    //         } else {
+    //             alert("Số bạn nhâp không thỏa yêu cầu");
+    //         }
+    //     }
+    // }
+    // console.log(array);
+
+    let array = [3, 4, 5, 5, 12, 13];
+
+    function checkTriangle(x, y, z) {
+        if (z === Math.sqrt(x * x + y * y) || x === Math.sqrt(y * y + z * z) || y === Math.sqrt(z * z + x * x)) {
+            return true;
+        }
+        return false;
+    }
+
+    let flag = true;
+    for (let i = 0; i < array.length; i + 3) {
+        let spliceArray = array.splice(i, 3);
+        if (!checkTriangle(spliceArray[0], spliceArray[1], spliceArray[2])) {
+            flag = false;
+            break;
+        }
+    }
+    flag ? alert("OK") : alert("NO");
+
+
+</script>
+
+</body>
+</html>
