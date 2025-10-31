@@ -7,7 +7,7 @@
 <body>
 <script>
     function checkString(str) {
-        let array = [str[0]];
+        let array = [str[0].toUpperCase()];
         let count = 0;
         for (let i = 1; i < str.length; i++) {
             if (/[a-zA-Z]/.test(str[i]) && str[i - 1] === " ") {
@@ -22,7 +22,7 @@
         }
     }
 
-    checkString("OliKi      oKI   fyuk");
+    checkString("oliKi      oKI   fyuk");
 </script>
 
 </body>

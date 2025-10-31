@@ -32,8 +32,9 @@
 
     let array = [3, 4, 5, 5, 12, 13];
 
-    function checkTriangle(x, y, z) {
-        if (z === Math.sqrt(x * x + y * y) || x === Math.sqrt(y * y + z * z) || y === Math.sqrt(z * z + x * x)) {
+    function checkTriangle(side1, side2, side3) {
+        if (side3 === Math.sqrt(side1 * side1 + side2 * side2) || side1 === Math.sqrt(side2 * side2 + side3 * side3)
+            || side2 === Math.sqrt(side3 * side3 + side1 * side1)) {
             return true;
         }
         return false;
